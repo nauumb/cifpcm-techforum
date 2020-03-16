@@ -1,0 +1,17 @@
+es\cifpcm\techforum\payload\response\JwtResponse.class
+es\cifpcm\techforum\models\ERole.class
+es\cifpcm\techforum\security\jwt\JwtUtils.class
+es\cifpcm\techforum\controllers\TestController.class
+es\cifpcm\techforum\models\Role.class
+es\cifpcm\techforum\security\services\UserDetailsImpl.class
+es\cifpcm\techforum\controllers\AuthController.class
+es\cifpcm\techforum\security\WebSecurityConfig.class
+es\cifpcm\techforum\models\User.class
+es\cifpcm\techforum\security\jwt\AuthTokenFilter.class
+es\cifpcm\techforum\payload\response\MessageResponse.class
+es\cifpcm\techforum\security\services\UserDetailsServiceImpl.class
+es\cifpcm\techforum\repository\UserRepository.class
+es\cifpcm\techforum\payload\request\SignupRequest.class
+es\cifpcm\techforum\security\jwt\AuthEntryPointJwt.class
+es\cifpcm\techforum\repository\RoleRepository.class
+es\cifpcm\techforum\payload\request\LoginRequest.class
