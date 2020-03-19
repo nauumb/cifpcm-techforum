@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a94373cd-19c2-4eea-ae5d-2f6a7c23ae1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +40,14 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="MongoDB - @localhost" type="feb32156:DbDataSourceImpl" />
         <item name="cifpcmtechforum: schema" type="f0f64354:MongoImplModel$Schema" />
-        <item name="users: table" type="531e99d1:MongoImplModel$Table" />
+        <item name="roles: table" type="531e99d1:MongoImplModel$Table" />
+        <item name="name: column" type="a4155d2c:MongoImplModel$TableColumn" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="MongoDB - @localhost" type="feb32156:DbDataSourceImpl" />
         <item name="cifpcmtechforum: schema" type="f0f64354:MongoImplModel$Schema" />
         <item name="users: table" type="531e99d1:MongoImplModel$Table" />
-        <item name="_id: column" type="a4155d2c:MongoImplModel$TableColumn" />
       </path>
     </expand>
     <select />
@@ -61,8 +57,8 @@
       <list>
         <option value="package-info" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -117,6 +113,7 @@
       <workItem from="1584296820889" duration="1948000" />
       <workItem from="1584383428618" duration="488000" />
       <workItem from="1584389749255" duration="1112000" />
+      <workItem from="1584627139646" duration="3289000" />
     </task>
     <servers />
   </component>
@@ -132,6 +129,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584389931777" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1584630364442">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584630364442" />
     <state x="779" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1584218469311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -148,10 +149,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="489" y="102" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584383538918" />
-    <state x="766" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1584389760809">
+    <state x="766" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1584627153816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="766" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584389760809" />
+    <state x="766" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584627153816" />
     <state x="664" y="413" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584221578746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
