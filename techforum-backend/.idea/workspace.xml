@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a94373cd-19c2-4eea-ae5d-2f6a7c23ae1e" name="Default Changelist" comment="" />
+    <list default="true" id="a94373cd-19c2-4eea-ae5d-2f6a7c23ae1e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +24,36 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MongoDB - @localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MongoDB - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="cifpcmtechforum: schema" type="f0f64354:MongoImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MongoDB - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="cifpcmtechforum: schema" type="f0f64354:MongoImplModel$Schema" />
+        <item name="roles: table" type="531e99d1:MongoImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MongoDB - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="cifpcmtechforum: schema" type="f0f64354:MongoImplModel$Schema" />
+        <item name="users: table" type="531e99d1:MongoImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MongoDB - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="cifpcmtechforum: schema" type="f0f64354:MongoImplModel$Schema" />
+        <item name="users: table" type="531e99d1:MongoImplModel$Table" />
+        <item name="_id: column" type="a4155d2c:MongoImplModel$TableColumn" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -32,7 +67,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PRY" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1Z8OHuU8ghUpWk0WrEspRUBsTby" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -42,17 +77,28 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mongo" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunManager">
+    <configuration name="TechforumApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="techforum" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="es.cifpcm.techforum.TechforumApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -69,6 +115,8 @@
       <workItem from="1584227207711" duration="2352000" />
       <workItem from="1584290934122" duration="1807000" />
       <workItem from="1584296820889" duration="1948000" />
+      <workItem from="1584383428618" duration="488000" />
+      <workItem from="1584389749255" duration="1112000" />
     </task>
     <servers />
   </component>
@@ -76,10 +124,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584223897953">
+    <state x="552" y="178" key="#Project_Structure" timestamp="1584383631824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584223897953" />
+    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1584383631824" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584389931777">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584389931777" />
     <state x="779" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1584218469311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -88,14 +140,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="761" y="342" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584226600455" />
-    <state x="489" y="102" key="SettingsEditor" timestamp="1584226667635">
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1584389956929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="489" y="102" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584226667635" />
-    <state x="766" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1584296926654">
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1584389956929" />
+    <state x="489" y="102" key="SettingsEditor" timestamp="1584383538918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="766" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584296926654" />
+    <state x="489" y="102" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584383538918" />
+    <state x="766" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1584389760809">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="766" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584389760809" />
     <state x="664" y="413" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584221578746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
