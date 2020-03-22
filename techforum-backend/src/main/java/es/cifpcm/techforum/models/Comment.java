@@ -8,12 +8,10 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 @Document(collection = "comments")
 public class Comment {
-
     @Id
     private String id;
 
     private String discussion_id;
-
     private String parent_id;
 
     @NotBlank
@@ -23,18 +21,17 @@ public class Comment {
     @NotBlank
     @Size(max = 500)
     private String text;
-
     private String slug;
     private String full_slug;
     private Date posted;
-    private User author;
+    private String author;
 
     public Comment() {
 
     }
 
     public Comment(String id, String discussion_id,String parent_id
-            ,String title, String text, String slug,String full_slug,Date posted, User author) {
+            ,String title, String text, String slug,String full_slug,Date posted, String author) {
         this.id = id;
         this.discussion_id =  discussion_id;
         this.parent_id = parent_id;
@@ -110,12 +107,7 @@ public class Comment {
         this.posted = posted;
     }
 
-    public User getAuthor() {
-        return author;
-    }
+    public String getAuthor() {  return author; }
 
-    public void setAuthor(User author) {
-        this.author = author;
-    }
-
+    public void setAuthor(String author) { this.author = author; }
 }

@@ -13,8 +13,8 @@ import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/test")
-public class TestController {
+@RequestMapping("/board")
+public class BoardController {
 
     @Autowired
     private CommentService commentService;
@@ -25,20 +25,20 @@ public class TestController {
     }
 
     @GetMapping("/user")
-    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMINISTRATOR')")
     public String userAccess() {
         return "User Content.";
     }
 
-    @GetMapping("/mod")
+    @GetMapping("/moderator")
     @PreAuthorize("hasRole('MODERATOR')")
     public String moderatorAccess() {
         return "Moderator Board.";
     }
 
-    @GetMapping("/admin")
-    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/administrator")
+    @PreAuthorize("hasRole('ADMINISTRATOR')")
     public String adminAccess() {
-        return "Admin Board.";
+        return "Administrator Board.";
     }
 }

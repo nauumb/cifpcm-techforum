@@ -33,13 +33,13 @@ export const router = new Router({
       component: () => import('./views/Profile.vue')
     },
     {
-      path: '/admin',
-      name: 'admin',
+      path: '/administrator',
+      name: 'administrator',
       // lazy-loaded
-      component: () => import('./views/BoardAdmin.vue')
+      component: () => import('./views/BoardAdministrator.vue')
     },
     {
-      path: '/mod',
+      path: '/moderator',
       name: 'moderator',
       // lazy-loaded
       component: () => import('./views/BoardModerator.vue')
@@ -61,7 +61,7 @@ router.beforeEach((to, from, next) => {
     // trying to access a restricted page + not logged in
     // redirect to login page
     if (authRequired && !loggedIn) {
-      next('/login');
+      next('/home');
     } else {
       next();
     }

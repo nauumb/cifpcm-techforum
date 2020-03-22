@@ -9,14 +9,14 @@
 <script>
 import UserService from '../services/user.service';
 export default {
-  name: 'Admin',
+  name: 'Administrator',
   data() {
     return {
       content: ''
     };
   },
   mounted() {
-    UserService.getAdminBoard().then(
+    UserService.getAdministratorBoard().then(
       response => {
         this.content = response.data;
       },

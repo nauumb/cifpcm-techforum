@@ -8,11 +8,11 @@
             <font-awesome-icon icon="home" /> Home
           </router-link>
         </li>
-        <li v-if="showAdminBoard" class="nav-item">
-          <router-link to="/admin" class="nav-link">Administrator Board</router-link>
+        <li v-if="showAdministratorBoard" class="nav-item">
+          <router-link to="/administrator" class="nav-link">Administrator Board</router-link>
         </li>
         <li v-if="showModeratorBoard" class="nav-item">
-          <router-link to="/mod" class="nav-link">Moderator Board</router-link>
+          <router-link to="/moderator" class="nav-link">Moderator Board</router-link>
         </li>
         <li class="nav-item">
           <router-link v-if="currentUser" to="/user" class="nav-link">User Board</router-link>
@@ -59,9 +59,9 @@ export default {
     currentUser() {
       return this.$store.state.auth.user;
     },
-    showAdminBoard() {
+    showAdministratorBoard() {
       if (this.currentUser && this.currentUser.roles) {
-        return this.currentUser.roles.includes('ROLE_ADMIN');
+        return this.currentUser.roles.includes('ROLE_ADMINISTRATOR');
       }
 
       return false;
