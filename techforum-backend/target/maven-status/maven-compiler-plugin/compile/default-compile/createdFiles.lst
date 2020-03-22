@@ -9,9 +9,13 @@ es\cifpcm\techforum\security\WebSecurityConfig.class
 es\cifpcm\techforum\models\User.class
 es\cifpcm\techforum\security\jwt\AuthTokenFilter.class
 es\cifpcm\techforum\payload\response\MessageResponse.class
+es\cifpcm\techforum\security\services\comments\CommentServiceImpl.class
 es\cifpcm\techforum\security\services\UserDetailsServiceImpl.class
 es\cifpcm\techforum\repository\UserRepository.class
 es\cifpcm\techforum\payload\request\SignupRequest.class
 es\cifpcm\techforum\security\jwt\AuthEntryPointJwt.class
+es\cifpcm\techforum\models\Comment.class
+es\cifpcm\techforum\security\services\comments\CommentService.class
 es\cifpcm\techforum\repository\RoleRepository.class
+es\cifpcm\techforum\repository\CommentRepository.class
 es\cifpcm\techforum\payload\request\LoginRequest.class

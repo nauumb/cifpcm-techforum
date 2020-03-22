@@ -12,10 +12,8 @@ public class Comment {
     @Id
     private String id;
 
-    @Id
     private String discussion_id;
 
-    @Id
     private String parent_id;
 
     @NotBlank
@@ -26,10 +24,8 @@ public class Comment {
     @Size(max = 500)
     private String text;
 
-    private String topic;
     private String slug;
     private String full_slug;
-    private Date last_update;
     private Date posted;
     private User author;
 
@@ -37,14 +33,16 @@ public class Comment {
 
     }
 
-    public Comment(String id, String discussion_id, String title, String text, String slug, Date posted, Date last_update, User author) {
+    public Comment(String id, String discussion_id,String parent_id
+            ,String title, String text, String slug,String full_slug,Date posted, User author) {
         this.id = id;
         this.discussion_id =  discussion_id;
+        this.parent_id = parent_id;
         this.title = title;
         this.text = text;
         this.slug = slug;
+        this.full_slug = full_slug;
         this.posted = posted;
-        this.last_update = last_update;
         this.author = author;
     }
 
@@ -120,19 +118,4 @@ public class Comment {
         this.author = author;
     }
 
-    public String getTopic() {
-        return topic;
-    }
-
-    public void setTopic(String topic) {
-        this.topic = topic;
-    }
-
-    public Date getLast_update() {
-        return last_update;
-    }
-
-    public void setLast_update(Date last_update) {
-        this.last_update = last_update;
-    }
 }
