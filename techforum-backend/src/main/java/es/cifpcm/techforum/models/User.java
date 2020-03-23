@@ -1,6 +1,7 @@
 package es.cifpcm.techforum.models;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.validation.constraints.Email;
@@ -41,9 +42,10 @@ public class User {
         this.password = password;
     }
 
-    public User(String username, String email) {
+    public User(String username,String email) {
         this.username = username;
         this.email = email;
+        this.roles = roles;
     }
 
     public String getId() {

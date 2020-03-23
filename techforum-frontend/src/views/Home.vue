@@ -8,7 +8,7 @@
         <small>{{ item.posted }}</small>
       </div>
       <p class="mb-1">{{ item.text }}</p>
-      <small>{{ item.author.username}} {{ item.author.role}}</small>
+      <small>{{ item.author.username}} {{ item.author.email}}</small>
   </a>
 </div>
   </div>

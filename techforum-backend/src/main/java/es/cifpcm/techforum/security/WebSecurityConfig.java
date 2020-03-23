@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import es.cifpcm.techforum.security.jwt.AuthEntryPointJwt;
 import es.cifpcm.techforum.security.jwt.AuthTokenFilter;
-import es.cifpcm.techforum.security.services.UserDetailsServiceImpl;
+import es.cifpcm.techforum.security.services.authorization.UserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity
@@ -60,6 +60,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests().antMatchers("/auth/**").permitAll()
                 .antMatchers("/board/**").permitAll()
+                .antMatchers("/comments/**").permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

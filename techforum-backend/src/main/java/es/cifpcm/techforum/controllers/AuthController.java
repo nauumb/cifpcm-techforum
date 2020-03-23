@@ -30,7 +30,7 @@ import es.cifpcm.techforum.payload.response.MessageResponse;
 import es.cifpcm.techforum.repository.RoleRepository;
 import es.cifpcm.techforum.repository.UserRepository;
 import es.cifpcm.techforum.security.jwt.JwtUtils;
-import es.cifpcm.techforum.security.services.UserDetailsImpl;
+import es.cifpcm.techforum.security.services.authorization.UserDetailsImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController

@@ -1,4 +1,4 @@
-package es.cifpcm.techforum.security.services;
+package es.cifpcm.techforum.security.services.authorization;
 
 import java.util.Collection;
 import java.util.List;

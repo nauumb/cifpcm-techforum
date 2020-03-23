@@ -24,15 +24,14 @@ public class Comment {
     private String slug;
     private String full_slug;
     private Date posted;
-    private String author;
+    private User author;
 
     public Comment() {
 
     }
 
-    public Comment(String id, String discussion_id,String parent_id
-            ,String title, String text, String slug,String full_slug,Date posted, String author) {
-        this.id = id;
+    public Comment(String discussion_id,String parent_id
+            ,String title, String text, String slug,String full_slug,Date posted, User author) {
         this.discussion_id =  discussion_id;
         this.parent_id = parent_id;
         this.title = title;
@@ -107,7 +106,7 @@ public class Comment {
         this.posted = posted;
     }
 
-    public String getAuthor() {  return author; }
+    public User getAuthor() {  return author; }
 
-    public void setAuthor(String author) { this.author = author; }
+    public void setAuthor(String User) { this.author = author; }
 }

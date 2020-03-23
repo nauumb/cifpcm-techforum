@@ -1,5 +1,6 @@
-package es.cifpcm.techforum.security.services;
+package es.cifpcm.techforum.security.services.authorization;
 
+import es.cifpcm.techforum.security.services.authorization.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
