@@ -1,18 +1,22 @@
-package es.cifpcm.techforum.models;
+package es.cifpcm.techforum.models.comments;
 
+import com.mongodb.BasicDBObject;
+import es.cifpcm.techforum.models.authorization.User;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.time.Instant;
 import java.util.Date;
 @Document(collection = "comments")
 public class Comment {
     @Id
     private String id;
 
-    private String discussion_id;
-    private String parent_id;
+    private ObjectId discussion_id;
+    private ObjectId parent_id;
 
     @NotBlank
     @Size(max = 50)
@@ -23,15 +27,15 @@ public class Comment {
     private String text;
     private String slug;
     private String full_slug;
-    private Date posted;
+    private Instant posted;
     private User author;
 
     public Comment() {
 
     }
 
-    public Comment(String discussion_id,String parent_id
-            ,String title, String text, String slug,String full_slug,Date posted, User author) {
+    public Comment(ObjectId discussion_id,ObjectId parent_id
+            ,String title, String text, String slug,String full_slug,Instant posted, User author) {
         this.discussion_id =  discussion_id;
         this.parent_id = parent_id;
         this.title = title;
@@ -42,6 +46,19 @@ public class Comment {
         this.author = author;
     }
 
+    public Comment(ObjectId discussion_id,String title, String text,
+                   String slug,String full_slug,Instant posted, User author) {
+        this.discussion_id =  discussion_id;
+        this.parent_id = parent_id;
+        this.title = title;
+        this.text = text;
+        this.slug = slug;
+        this.full_slug = full_slug;
+        this.posted = posted;
+        this.author = author;
+    }
+
+
     public String getId() {
         return id;
     }
@@ -50,11 +67,11 @@ public class Comment {
         this.id = id;
     }
 
-    public String getParent_id() {
+    public ObjectId getParent_id() {
         return parent_id;
     }
 
-    public void setParent_id(String parent_id) {
+    public void setParent_id(ObjectId parent_id) {
         this.parent_id = parent_id;
     }
 
@@ -66,11 +83,11 @@ public class Comment {
         this.text = text;
     }
 
-    public String getDiscussion_id() {
+    public ObjectId getDiscussion_id() {
         return discussion_id;
     }
 
-    public void setDiscussion_id(String discussion_id) {
+    public void setDiscussion_id(ObjectId discussion_id) {
         this.discussion_id = discussion_id;
     }
 
@@ -98,11 +115,11 @@ public class Comment {
         this.full_slug = full_slug;
     }
 
-    public Date getPosted() {
+    public Instant getPosted(){
         return posted;
     }
 
-    public void setPosted(Date posted) {
+    public void setPosted(Instant posted) {
         this.posted = posted;
     }
 

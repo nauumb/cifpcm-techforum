@@ -1,4 +1,4 @@
-package es.cifpcm.techforum.payload.request;
+package es.cifpcm.techforum.payload.request.authorization;
 
 import java.util.Set;
 

@@ -3,18 +3,38 @@
   <component name="ChangeListManager">
     <list default="true" id="a94373cd-19c2-4eea-ae5d-2f6a7c23ae1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/jwt/AuthTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/jwt/AuthTokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/jwt/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/jwt/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/authorization/UserDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/authorization/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/comments/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/ERole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/authorization/ERole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/authorization/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/authorization/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/AskRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/comments/AskRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/authorization/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/authorization/SignupRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/comments/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/authorization/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/authorization/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/authorization/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/authorization/UserDetailsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/authorization/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/authorization/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/comments/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/comments/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/comments/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/comments/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/controllers/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/controllers/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/security/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/models/ERole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/models/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/models/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/payload/request/LoginRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/payload/request/SignupRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/repository/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/techforum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/techforum.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../techforum-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../techforum-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/views/Home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +124,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -141,6 +162,10 @@
       <workItem from="1584898623319" duration="252000" />
       <workItem from="1584899904453" duration="3006000" />
       <workItem from="1584984438902" duration="9608000" />
+      <workItem from="1585068355493" duration="6144000" />
+      <workItem from="1585076508491" duration="2587000" />
+      <workItem from="1585151692914" duration="2517000" />
+      <workItem from="1585158564706" duration="1556000" />
     </task>
     <servers />
   </component>
@@ -169,62 +194,62 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584988958982" />
-    <state x="779" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1584218469311">
+    <state x="779" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1585069809557">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="779" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584218469311" />
+    <state x="779" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585069809557" />
     <state x="761" y="342" key="FileChooserDialogImpl" timestamp="1584226600455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="761" y="342" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584226600455" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584996450600">
+    <state width="1877" height="308" key="GridCell.Tab.0.bottom" timestamp="1585167160185">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584996450600" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584996450599">
+    <state width="1877" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
+    <state width="1877" height="308" key="GridCell.Tab.0.center" timestamp="1585167160185">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584996450599" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584996450599">
+    <state width="1877" height="308" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
+    <state width="1877" height="308" key="GridCell.Tab.0.left" timestamp="1585167160185">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584996450599" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584996450600">
+    <state width="1877" height="308" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
+    <state width="1877" height="308" key="GridCell.Tab.0.right" timestamp="1585167160185">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584996450600" />
-    <state width="1877" height="282" key="GridCell.Tab.1.bottom" timestamp="1584996450601">
+    <state width="1877" height="308" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
+    <state width="1877" height="308" key="GridCell.Tab.1.bottom" timestamp="1585167160186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584996450601" />
-    <state width="1877" height="282" key="GridCell.Tab.1.center" timestamp="1584996450600">
+    <state width="1877" height="308" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160186" />
+    <state width="1877" height="308" key="GridCell.Tab.1.center" timestamp="1585167160185">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584996450600" />
-    <state width="1877" height="282" key="GridCell.Tab.1.left" timestamp="1584996450600">
+    <state width="1877" height="308" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
+    <state width="1877" height="308" key="GridCell.Tab.1.left" timestamp="1585167160185">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584996450600" />
-    <state width="1877" height="282" key="GridCell.Tab.1.right" timestamp="1584996450601">
+    <state width="1877" height="308" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
+    <state width="1877" height="308" key="GridCell.Tab.1.right" timestamp="1585167160186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584996450601" />
-    <state width="1877" height="348" key="GridCell.Tab.2.bottom" timestamp="1584822877784">
+    <state width="1877" height="308" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160186" />
+    <state width="1877" height="258" key="GridCell.Tab.2.bottom" timestamp="1585075872895">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584822877784" />
-    <state width="1877" height="348" key="GridCell.Tab.2.center" timestamp="1584822877783">
+    <state width="1877" height="258" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585075872895" />
+    <state width="1877" height="258" key="GridCell.Tab.2.center" timestamp="1585075872881">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584822877783" />
-    <state width="1877" height="348" key="GridCell.Tab.2.left" timestamp="1584822877783">
+    <state width="1877" height="258" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585075872881" />
+    <state width="1877" height="258" key="GridCell.Tab.2.left" timestamp="1585075872881">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584822877783" />
-    <state width="1877" height="348" key="GridCell.Tab.2.right" timestamp="1584822877784">
+    <state width="1877" height="258" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585075872881" />
+    <state width="1877" height="258" key="GridCell.Tab.2.right" timestamp="1585075872882">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584822877784" />
+    <state width="1877" height="258" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585075872882" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1584389956929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -233,14 +258,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="489" y="102" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584892750623" />
-    <state x="766" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1584984456610">
+    <state x="550" y="267" key="caller.chooser.dialog" timestamp="1585077229592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="766" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584984456610" />
+    <state x="550" y="267" key="caller.chooser.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585077229592" />
+    <state x="766" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1585158587786">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="766" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585158587786" />
     <state x="664" y="413" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584221578746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="664" y="413" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1584221578746" />
+    <state x="690" y="285" key="extract.method.dialog" timestamp="1585074359921">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="285" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585074359921" />
     <state x="656" y="118" width="607" height="804" key="find.popup" timestamp="1584811427432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

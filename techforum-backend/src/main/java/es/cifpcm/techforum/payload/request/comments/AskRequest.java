@@ -1,13 +1,7 @@
-package es.cifpcm.techforum.payload.request;
+package es.cifpcm.techforum.payload.request.comments;
 
-import es.cifpcm.techforum.models.Role;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.HashSet;
-import java.util.Set;
 
 public class AskRequest {
 

@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,17 +21,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.cifpcm.techforum.models.ERole;
-import es.cifpcm.techforum.models.Role;
-import es.cifpcm.techforum.models.User;
-import es.cifpcm.techforum.payload.request.LoginRequest;
-import es.cifpcm.techforum.payload.request.SignupRequest;
+import es.cifpcm.techforum.models.authorization.ERole;
+import es.cifpcm.techforum.models.authorization.Role;
+import es.cifpcm.techforum.models.authorization.User;
+import es.cifpcm.techforum.payload.request.authorization.LoginRequest;
+import es.cifpcm.techforum.payload.request.authorization.SignupRequest;
 import es.cifpcm.techforum.payload.response.JwtResponse;
 import es.cifpcm.techforum.payload.response.MessageResponse;
-import es.cifpcm.techforum.repository.RoleRepository;
-import es.cifpcm.techforum.repository.UserRepository;
+import es.cifpcm.techforum.repository.authorization.RoleRepository;
+import es.cifpcm.techforum.repository.authorization.UserRepository;
 import es.cifpcm.techforum.security.jwt.JwtUtils;
 import es.cifpcm.techforum.security.services.authorization.UserDetailsImpl;
+
+import static es.cifpcm.techforum.utils.authorization.Role.findRole;
+
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -62,7 +66,7 @@ public class AuthController {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         List<String> roles = userDetails.getAuthorities().stream()
-                .map(item -> item.getAuthority())
+                .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(new JwtResponse(jwt,
@@ -100,24 +104,7 @@ public class AuthController {
             roles.add(userRole);
         } else {
             strRoles.forEach(role -> {
-                switch (role) {
-                    case "administrator":
-                        Role adminRole = roleRepository.findByName(ERole.ROLE_ADMINISTRATOR)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(adminRole);
-
-                        break;
-                    case "moderator":
-                        Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(modRole);
-
-                        break;
-                    default:
-                        Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(userRole);
-                }
+                findRole(roles, role, roleRepository);
             });
         }
 

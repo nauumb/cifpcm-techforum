@@ -1,4 +1,4 @@
-package es.cifpcm.techforum.models;
+package es.cifpcm.techforum.models.authorization;
 
 public enum ERole {
     ROLE_USER,
