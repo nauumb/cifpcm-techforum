@@ -38,10 +38,10 @@ public class CommentController {
     RoleRepository roleRepository;
 
     @PostMapping("/ask")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody AskRequest askRequest) {
+    public ResponseEntity<?> ask (@Valid @RequestBody AskRequest askRequest) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getDetails();
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
         HashSet<String> strRoles = userDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
