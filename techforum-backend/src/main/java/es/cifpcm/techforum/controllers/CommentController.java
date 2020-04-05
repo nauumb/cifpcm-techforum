@@ -13,17 +13,15 @@ import org.apache.catalina.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-<<<<<<< HEAD
 import java.security.Principal;
 import java.time.Instant;
-=======
 import java.util.Date;
->>>>>>> parent of e668360... Major changes.
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -44,18 +42,16 @@ public class CommentController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
+        HashSet<String> strRoles = userDetails.getAuthorities().stream()
+                .map(GrantedAuthority::getAuthority)
+                .collect(Collectors.toCollection(HashSet::new));
 
-<<<<<<< HEAD
         Set<Role> roles = new HashSet<>();
         strRoles.forEach(role -> {
             int cutPoint = role.indexOf("_");
             role = role.substring(cutPoint + 1).toLowerCase();
-=======
-        /*HashSet<String> roles = userDetails.getAuthorities().stream()
-                .map(item -> item.getAuthority())
-                .collect(Collectors.toCollection(HashSet::new));*/
 
->>>>>>> parent of e668360... Major changes.
+
 
         User user = new User(userDetails.getUsername(),  userDetails.getEmail());
 
