@@ -1,5 +1,6 @@
-package es.cifpcm.techforum.models;
+package es.cifpcm.techforum.models.authorization;
 
+import es.cifpcm.techforum.models.authorization.ERole;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

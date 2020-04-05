@@ -1,14 +1,16 @@
 <template>
   <div class="container">
-    <header class=""> <h3>Post´s</h3> </header>
+    <header class="my-4"> <h3>Top Comments</h3> </header>
+    <div class="d-flex my-2"><router-link class="ml-auto btn btn-outline-secondary" to="/comments/ask">Ask a question</router-link></div>
     <div class="list-group">
       <a href="#" class="list-group-item list-group-item-action"  v-for="(item,index) in content"  :key="index">
       <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{ item.id }} {{ item.title }}</h5>
-        <small>{{ item.posted }}</small>
+        <h5 class="mb-1">{{ item.title }}</h5>
+        <small>{{ item.posted | moment }}</small>
       </div>
-      <p class="mb-1">{{ item.text }}</p>
-      <small>{{ item.author.username}} {{ item.author.email}}</small>
+      <div class="d-flex justify-content-end">
+        <small class="text-right"> {{ item.author.username}}</small>
+      </div>
   </a>
 </div>
   </div>
@@ -16,6 +18,7 @@
 
 <script>
 import UserService from '../services/user.service';
+import moment from 'moment'
 
 export default {
   name: 'Home',
@@ -28,12 +31,7 @@ export default {
     UserService.getPublicContent().then(
       response => {
         this.content = response.data;
-<<<<<<< HEAD
         //console.log(this.content)
-=======
-        console.log(this.content)
-        console.log(this.content[0].id)
->>>>>>> parent of e668360... Major changes.
       },
       error => {
         this.content =
@@ -42,6 +40,12 @@ export default {
           error.toString();
       }
     );
+  },
+  filters: {
+    moment: function (date) {
+      /*return moment(date).format('MMMM Do YYYY, h:mm:ss a');*/
+      return moment(date).local().fromNow();
+    }
   }
 };
 </script>
