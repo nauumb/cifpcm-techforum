@@ -1,4 +1,4 @@
-package es.cifpcm.techforum.payload.request.authorization;
+package es.cifpcm.techforum.payload.request;
 
 import javax.validation.constraints.NotBlank;
 

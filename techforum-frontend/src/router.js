@@ -49,12 +49,6 @@ export const router = new Router({
       name: 'user',
       // lazy-loaded
       component: () => import('./views/BoardUser.vue')
-    },
-    {
-      path: '/comments/ask',
-      name: 'NewComment',
-      // lazy-loaded
-      component: () => import('./views/NewComment.vue')
     }
   ]
 });
@@ -67,7 +61,7 @@ router.beforeEach((to, from, next) => {
     // trying to access a restricted page + not logged in
     // redirect to login page
     if (authRequired && !loggedIn) {
-      next('/login');
+      next('/home');
     } else {
       next();
     }

@@ -1,6 +1,6 @@
 package es.cifpcm.techforum.controllers;
 
-import es.cifpcm.techforum.models.comments.Comment;
+import es.cifpcm.techforum.models.Comment;
 import es.cifpcm.techforum.security.services.comments.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

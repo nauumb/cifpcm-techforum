@@ -1,7 +1,7 @@
 package es.cifpcm.techforum.security.services.comments;
 
-import es.cifpcm.techforum.models.comments.Comment;
-import es.cifpcm.techforum.repository.comments.CommentRepository;
+import es.cifpcm.techforum.models.Comment;
+import es.cifpcm.techforum.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

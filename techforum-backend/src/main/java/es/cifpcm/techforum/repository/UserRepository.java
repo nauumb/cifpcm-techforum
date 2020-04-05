@@ -1,10 +1,10 @@
-package es.cifpcm.techforum.repository.authorization;
+package es.cifpcm.techforum.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import es.cifpcm.techforum.models.authorization.User;
+import es.cifpcm.techforum.models.User;
 
 public interface UserRepository extends MongoRepository<User, String> {
 

@@ -1,13 +1,13 @@
-package es.cifpcm.techforum.models.authorization;
+package es.cifpcm.techforum.models;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import es.cifpcm.techforum.models.authorization.Role;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -42,7 +42,7 @@ public class User {
         this.password = password;
     }
 
-    public User(String username,String email, Set<Role> roles) {
+    public User(String username,String email) {
         this.username = username;
         this.email = email;
         this.roles = roles;
