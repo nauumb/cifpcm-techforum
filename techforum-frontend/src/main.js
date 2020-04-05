@@ -15,12 +15,16 @@ import {
   faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
 
+
+
 library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt);
 
 Vue.config.productionTip = false;
 
 Vue.use(VeeValidate);
-
+import VuePrismEditor from "vue-prism-editor";
+import "vue-prism-editor/dist/VuePrismEditor.css"; // import the styles
+Vue.component("prism-editor", VuePrismEditor);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 new Vue({

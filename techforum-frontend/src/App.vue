@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <a href class="navbar-brand" @click.prevent>CIFPCM Tech Forum</a>
       <div class="navbar-nav mr-auto">
@@ -46,7 +47,7 @@
         </li>
       </div>
     </nav>
-
+    
     <div class="container">
       <router-view />
     </div>
@@ -54,31 +55,29 @@
 </template>
 
 <script>
-export default {
-  computed: {
-    currentUser() {
-      return this.$store.state.auth.user;
-    },
-    showAdministratorBoard() {
-      if (this.currentUser && this.currentUser.roles) {
-        return this.currentUser.roles.includes('ROLE_ADMINISTRATOR');
+  export default {
+    computed: {
+      currentUser() {
+        return this.$store.state.auth.user;
+      },
+      showAdministratorBoard() {
+        if (this.currentUser && this.currentUser.roles) {
+          return this.currentUser.roles.includes('ROLE_ADMINISTRATOR');
+        }
+        return false;
+      },
+      showModeratorBoard() {
+        if (this.currentUser && this.currentUser.roles) {
+          return this.currentUser.roles.includes('ROLE_MODERATOR');
+        }
+        return false;
       }
-
-      return false;
     },
-    showModeratorBoard() {
-      if (this.currentUser && this.currentUser.roles) {
-        return this.currentUser.roles.includes('ROLE_MODERATOR');
+    methods: {
+      logOut() {
+        this.$store.dispatch('auth/logout');
+        this.$router.push('/login');
       }
-
-      return false;
     }
-  },
-  methods: {
-    logOut() {
-      this.$store.dispatch('auth/logout');
-      this.$router.push('/login');
-    }
-  }
-};
+  };
 </script>
