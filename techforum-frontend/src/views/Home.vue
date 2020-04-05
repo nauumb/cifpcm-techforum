@@ -31,7 +31,7 @@ export default {
     UserService.getPublicContent().then(
       response => {
         this.content = response.data;
-        console.log(this.content)
+        //console.log(this.content)
       },
       error => {
         this.content =

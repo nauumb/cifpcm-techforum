@@ -3,38 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a94373cd-19c2-4eea-ae5d-2f6a7c23ae1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/comments/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/ERole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/authorization/ERole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/authorization/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/authorization/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/AskRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/comments/AskRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/authorization/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/authorization/SignupRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/comments/CommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/authorization/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/authorization/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/authorization/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/authorization/UserDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/authorization/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/authorization/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/comments/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/comments/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/comments/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/comments/CommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/controllers/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/controllers/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/models/ERole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/models/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/payload/request/LoginRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/payload/request/SignupRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/repository/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/techforum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/techforum.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../techforum-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../techforum-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/views/NewComment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/views/NewComment.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +137,7 @@
       <workItem from="1585076508491" duration="2587000" />
       <workItem from="1585151692914" duration="2517000" />
       <workItem from="1585158564706" duration="1556000" />
+      <workItem from="1586103845034" duration="6549000" />
     </task>
     <servers />
   </component>
@@ -202,53 +174,77 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="761" y="342" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584226600455" />
-    <state width="1877" height="308" key="GridCell.Tab.0.bottom" timestamp="1585167160185">
+    <state width="1877" height="321" key="GridCell.Tab.0.bottom" timestamp="1586113507191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507191" />
+    <state width="1317" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626830" />
     <state width="1877" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
-    <state width="1877" height="308" key="GridCell.Tab.0.center" timestamp="1585167160185">
+    <state width="1877" height="321" key="GridCell.Tab.0.center" timestamp="1586113507191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507191" />
+    <state width="1317" height="248" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626830" />
     <state width="1877" height="308" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
-    <state width="1877" height="308" key="GridCell.Tab.0.left" timestamp="1585167160185">
+    <state width="1877" height="321" key="GridCell.Tab.0.left" timestamp="1586113507191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507191" />
+    <state width="1317" height="248" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626830" />
     <state width="1877" height="308" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
-    <state width="1877" height="308" key="GridCell.Tab.0.right" timestamp="1585167160185">
+    <state width="1877" height="321" key="GridCell.Tab.0.right" timestamp="1586113507191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507191" />
+    <state width="1317" height="248" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626830" />
     <state width="1877" height="308" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
-    <state width="1877" height="308" key="GridCell.Tab.1.bottom" timestamp="1585167160186">
+    <state width="1877" height="321" key="GridCell.Tab.1.bottom" timestamp="1586113507191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507191" />
+    <state width="1317" height="248" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626482" />
     <state width="1877" height="308" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160186" />
-    <state width="1877" height="308" key="GridCell.Tab.1.center" timestamp="1585167160185">
+    <state width="1877" height="321" key="GridCell.Tab.1.center" timestamp="1586113507191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507191" />
+    <state width="1317" height="248" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626482" />
     <state width="1877" height="308" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
-    <state width="1877" height="308" key="GridCell.Tab.1.left" timestamp="1585167160185">
+    <state width="1877" height="321" key="GridCell.Tab.1.left" timestamp="1586113507191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507191" />
+    <state width="1317" height="248" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626482" />
     <state width="1877" height="308" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160185" />
-    <state width="1877" height="308" key="GridCell.Tab.1.right" timestamp="1585167160186">
+    <state width="1877" height="321" key="GridCell.Tab.1.right" timestamp="1586113507191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507191" />
+    <state width="1317" height="248" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626482" />
     <state width="1877" height="308" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585167160186" />
-    <state width="1877" height="258" key="GridCell.Tab.2.bottom" timestamp="1585075872895">
+    <state width="1877" height="321" key="GridCell.Tab.2.bottom" timestamp="1586113507192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507192" />
+    <state width="1317" height="248" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626483" />
     <state width="1877" height="258" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585075872895" />
-    <state width="1877" height="258" key="GridCell.Tab.2.center" timestamp="1585075872881">
+    <state width="1877" height="321" key="GridCell.Tab.2.center" timestamp="1586113507191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507191" />
+    <state width="1317" height="248" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626482" />
     <state width="1877" height="258" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585075872881" />
-    <state width="1877" height="258" key="GridCell.Tab.2.left" timestamp="1585075872881">
+    <state width="1877" height="321" key="GridCell.Tab.2.left" timestamp="1586113507191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507191" />
+    <state width="1317" height="248" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626482" />
     <state width="1877" height="258" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585075872881" />
-    <state width="1877" height="258" key="GridCell.Tab.2.right" timestamp="1585075872882">
+    <state width="1877" height="321" key="GridCell.Tab.2.right" timestamp="1586113507192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="321" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586113507192" />
+    <state width="1317" height="248" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626482" />
     <state width="1877" height="258" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585075872882" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1584389956929">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -262,9 +258,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="550" y="267" key="caller.chooser.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585077229592" />
-    <state x="766" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1585158587786">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2463" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1586103845336">
+      <screen x="1920" y="0" width="1360" height="728" />
     </state>
+    <state x="2463" y="248" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586103845336" />
     <state x="766" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585158587786" />
     <state x="664" y="413" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584221578746">
       <screen x="0" y="0" width="1920" height="1040" />

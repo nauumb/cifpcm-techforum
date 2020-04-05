@@ -17,7 +17,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.security.Principal;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
@@ -39,14 +41,13 @@ public class CommentController {
     public ResponseEntity<?> registerUser(@Valid @RequestBody AskRequest askRequest) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getDetails();
 
         HashSet<String> strRoles = userDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toCollection(HashSet::new));
 
         Set<Role> roles = new HashSet<>();
-
         strRoles.forEach(role -> {
             int cutPoint = role.indexOf("_");
             role = role.substring(cutPoint + 1).toLowerCase();
