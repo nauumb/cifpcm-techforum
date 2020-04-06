@@ -21,10 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.time.Instant;
-<<<<<<< HEAD
 import java.util.Date;
-=======
->>>>>>> parent of 8eb1c48... Revert changes.
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -56,12 +53,8 @@ public class CommentController {
             int cutPoint = role.indexOf("_");
             role = role.substring(cutPoint + 1).toLowerCase();
 
-<<<<<<< HEAD
-
-=======
             findRole(roles, role, roleRepository);
         });
->>>>>>> parent of 8eb1c48... Revert changes.
 
         User user = new User(userDetails.getUsername(),  userDetails.getEmail(), roles);
         ObjectId discussion_id = ObjectId.get();

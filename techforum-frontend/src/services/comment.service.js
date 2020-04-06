@@ -7,9 +7,8 @@ class CommentsService {
     ask(post){
         return axios.post(API_URL + 'ask', {
             title: post.title,
-            text: post.text,
-            headers: authHeader()
-        });
+            text: post.text
+        },{headers: authHeader()});
     }
 }
 export default new CommentsService();
