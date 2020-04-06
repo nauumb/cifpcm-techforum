@@ -49,10 +49,10 @@ public class CommentController {
                 .collect(Collectors.toCollection(HashSet::new));
 
         Set<Role> roles = new HashSet<>();
+
         strRoles.forEach(role -> {
             int cutPoint = role.indexOf("_");
             role = role.substring(cutPoint + 1).toLowerCase();
-
             findRole(roles, role, roleRepository);
         });
 
