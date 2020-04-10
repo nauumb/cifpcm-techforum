@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-12">
     <div class="card card-container">
-      <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />
+      <b-avatar class="align-self-center" size="6rem"></b-avatar>
       <form name="form" @submit.prevent="handleLogin">
         <div class="form-group">
           <label for="username">Username</label>
@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
           <button class="btn btn-secondary btn-block" :disabled="loading">
-            <span v-show="loading" class="spinner-border spinner-border-sm"></span>
+            <span v-show="loading" class="spinner-border spinner-border-sm mr-2"></span>
             <span>Login</span>
           </button>
         </div>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import User from '../models/user';
+  import User from '../../models/user';
 
   export default {
     name: 'Login',
@@ -57,7 +57,6 @@
             this.loading = false;
             return;
           }
-
           if (this.user.username && this.user.password) {
             this.$store.dispatch('auth/login', this.user).then(
               () => {

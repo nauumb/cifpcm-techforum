@@ -1,53 +1,86 @@
 <template>
   <div id="app">
+    <div>
+      <b-navbar class="py-0" toggleable="md" type="dark" variant="dark">
+        <b-navbar-brand @click.prevent class="">CIFPCM Tech Forum</b-navbar-brand>
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <a href class="navbar-brand" @click.prevent>CIFPCM Tech Forum</a>
-      <div class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <router-link to="/home" class="nav-link">
-            <font-awesome-icon icon="home" /> Home
-          </router-link>
-        </li>
-        <li v-if="showAdministratorBoard" class="nav-item">
-          <router-link to="/administrator" class="nav-link">Administrator Board</router-link>
-        </li>
-        <li v-if="showModeratorBoard" class="nav-item">
-          <router-link to="/moderator" class="nav-link">Moderator Board</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link v-if="currentUser" to="/user" class="nav-link">User Board</router-link>
-        </li>
-      </div>
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <div v-if="!currentUser" class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <router-link to="/register" class="nav-link">
-            <font-awesome-icon icon="user-plus" /> Sign Up
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/login" class="nav-link">
-            <font-awesome-icon icon="sign-in-alt" /> Login
-          </router-link>
-        </li>
-      </div>
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item>
+              <router-link to="/home" class="nav-link">
+                <font-awesome-icon icon="home" /> Home
+              </router-link>
+            </b-nav-item>
 
-      <div v-if="currentUser" class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <router-link to="/profile" class="nav-link">
-            <font-awesome-icon icon="user" />
-            {{ currentUser.username }}
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href @click.prevent="logOut">
-            <font-awesome-icon icon="sign-out-alt" /> LogOut
-          </a>
-        </li>
-      </div>
-    </nav>
-    
+            <b-nav-item v-if="showAdministratorBoard">
+              <router-link to="/administrator" class="nav-link">Administrator Board</router-link>
+            </b-nav-item>
+
+            <b-nav-item v-if="showModeratorBoard">
+              <router-link to="/moderator" class="nav-link">Moderator Board</router-link>
+            </b-nav-item>
+
+            <b-nav-item>
+              <router-link v-if="currentUser" to="/user" class="nav-link">User Board</router-link>
+            </b-nav-item>
+
+          </b-navbar-nav>
+
+          <b-navbar-nav v-if="!currentUser" class="ml-auto">
+            <b-nav-item>
+              <router-link class="mr-1 btn btn-secondary btn-sm nav-link text-light" to="/register">
+              Sign Up
+              </router-link>
+            </b-nav-item>
+
+            <b-nav-item>
+              <router-link class="ml-1 btn btn-secondary btn-sm nav-link text-light" to="/login">
+              Login
+              </router-link>
+            </b-nav-item>
+
+          </b-navbar-nav>
+
+
+          <b-navbar-nav v-if="currentUser" class="ml-auto ">
+            <div class="d-none d-md-block">
+              <b-nav-item-dropdown right>
+                <b-dropdown-item disabled>
+                  Signed in as {{currentUser.username}}
+                </b-dropdown-item>
+                <b-dropdown-divider></b-dropdown-divider>
+                <template v-slot:button-content>
+                  <b-avatar square size="2em"></b-avatar>
+                </template>
+                <b-dropdown-item>
+                  <router-link to="/profile" class="nav-link text-dark">Your profile
+                  </router-link>
+                </b-dropdown-item>
+                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-item>
+                  <a href @click.prevent="logOut" class="nav-link text-dark">Sign out</a>
+                </b-dropdown-item>
+              </b-nav-item-dropdown>
+            </div>
+
+            <div class="d-block d-md-none">
+              <b-nav-item>
+                <router-link to="/profile" class="nav-link">Your profile
+                </router-link>
+              </b-nav-item>
+
+              <b-nav-item>
+                <a href @click.prevent="logOut" class="nav-link">Sign out</a>
+              </b-nav-item>
+
+            </div>
+
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
     <div class="container">
       <router-view />
     </div>

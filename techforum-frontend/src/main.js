@@ -2,9 +2,18 @@ import Vue from 'vue';
 import App from './App.vue';
 import { router } from './router';
 import store from './store';
+
+import VuePrismEditor from "vue-prism-editor";
+import "vue-prism-editor/dist/VuePrismEditor.css";
+
+import VeeValidate from 'vee-validate';
+
+import { BootstrapVue} from 'bootstrap-vue'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import VeeValidate from 'vee-validate';
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
@@ -15,15 +24,12 @@ import {
   faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
 
-
-
-library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt);
-
 Vue.config.productionTip = false;
 
+library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt);
+Vue.use(BootstrapVue)
 Vue.use(VeeValidate);
-import VuePrismEditor from "vue-prism-editor";
-import "vue-prism-editor/dist/VuePrismEditor.css"; // import the styles
+
 Vue.component("prism-editor", VuePrismEditor);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 

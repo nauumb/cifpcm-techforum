@@ -40,8 +40,8 @@
   </div>
 </template>
 <script>
-  import Comment from '../models/comment';
-  import CommentService from '../services/comment.service';
+  import Comment from '../../models/comment';
+  import CommentService from '../../services/comment.service';
   import "prismjs";
   import "prismjs/themes/prism.css";
 
@@ -53,15 +53,17 @@
         lineNumbers: true,
         readonly: false,
         loading: false,
-         message: ''
+        message: ''
       };
     },
     methods: {
       handleNewComment() {
+         this.loading = true;
         CommentService.ask(this.comment).then(
           response => {
             this.message = response.data;
             console.log(this.message)
+            this.$router.push('/');
           },
            error => {
              this.message =
@@ -71,17 +73,13 @@
               console.log(this.message)
           }
         );
+        this.loading = false;
       }
     },
     computed: {
       currentUser() {
         return this.$store.state.auth.user;
       }
-      // },
-      // mounted() {
-      //   if (!this.currentUser) {
-      //     this.$router.push('/login');
-      //   }
     }
   };
 </script>

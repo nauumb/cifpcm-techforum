@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-12">
     <div class="card card-container">
-      <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />
+      <b-avatar class="align-self-center" size="6rem"></b-avatar>
       <form name="form" @submit.prevent="handleRegister">
         <div v-if="!successful">
           <div class="form-group">
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-  import User from '../models/user';
+  import User from '../../models/user';
 
   export default {
     name: 'Register',
