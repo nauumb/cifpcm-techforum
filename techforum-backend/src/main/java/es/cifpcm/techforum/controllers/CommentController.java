@@ -11,7 +11,9 @@ import es.cifpcm.techforum.repository.authorization.RoleRepository;
 import es.cifpcm.techforum.security.services.authorization.UserDetailsImpl;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.time.Instant;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -37,6 +40,7 @@ public class CommentController {
     RoleRepository roleRepository;
 
     @PostMapping("/ask")
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMINISTRATOR')")
     public ResponseEntity<?> ask (@Valid @RequestBody AskRequest askRequest) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -68,5 +72,16 @@ public class CommentController {
         commentRepository.save(comment);
 
         return ResponseEntity.ok(new MessageResponse(info));
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity<Comment> getCommentById(@PathVariable("id") String id) {
+        Optional<Comment> commentData = commentRepository.findById(id);
+
+        if (commentData.isPresent()) {
+            return new ResponseEntity<>(commentData.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }

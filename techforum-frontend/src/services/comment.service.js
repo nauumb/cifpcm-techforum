@@ -10,5 +10,10 @@ class CommentsService {
             text: post.text
         },{headers: authHeader()});
     }
+    get(id){
+        return axios.get(API_URL + id, {
+            
+        });
+    }
 }
 export default new CommentsService();

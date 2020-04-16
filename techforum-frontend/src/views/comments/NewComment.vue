@@ -71,9 +71,10 @@
               error.message ||
               error.toString();
               console.log(this.message)
+              this.loading = false;
           }
         );
-        this.loading = false;
+
       }
     },
     computed: {
