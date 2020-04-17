@@ -14,23 +14,26 @@ export default {
     };
   },
   mounted() {
-      CommentService.get(this.commentId).then(
-        response => {
-          this.comment = response.data;
-          console.log(this.comment);
-          this.$router.replace({ path: '/comments/' + this.comment.slug })
-        },
-        error => {
-          this.message =
-            (error.response && error.response.data) ||
-            error.message ||
-            error.toString();
-          console.log(this.message);
-        }
-      );
-  },
+    CommentService.get(this.commentId).then(
+      response => {
+        this.comment = response.data;
+        console.log(this.comment);
+        this.$router.replace({ path: "/comments/" + this.comment.slug });
+        document.title = "Comment - details";
+      },
+      error => {
+        this.message =
+          (error.response && error.response.data) ||
+          error.message ||
+          error.toString();
+        console.log(this.message);
+      }
+    );
+  }
 };
 </script>
+
+
 
 <style scoped>
 </style>

@@ -7,15 +7,17 @@
 </template>
 
 <script>
-import UserService from '../../../services/user.service';
+import UserService from "../../../services/user.service";
 export default {
-  name: 'Administrator',
+  name: "Administrator",
   data() {
     return {
-      content: ''
+      content: ""
     };
   },
   mounted() {
+    document.title =
+      "Administrator board | " + this.$store.state.auth.user.username;
     UserService.getAdministratorBoard().then(
       response => {
         this.content = response.data;

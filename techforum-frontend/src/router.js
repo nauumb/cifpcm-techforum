@@ -48,12 +48,12 @@ export const router = new Router({
       name: 'NewComment',
       component: () => import('./views/comments/NewComment.vue'),
     },
-    { 
+    {
       path: '/comments/:commentId',
       name: 'commentDetails',
       component: () => import('./views/comments/CommentDetails.vue'),
       props: true,
-    }
+    },
   ],
 })
 

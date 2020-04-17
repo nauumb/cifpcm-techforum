@@ -26,12 +26,15 @@
 </template>
 
 <script>
-  export default {
-    name: 'Profile',
-    computed: {
-      currentUser() {
-        return this.$store.state.auth.user;
-      }
+export default {
+  name: "Profile",
+  computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
     }
-  };
+  },
+  mounted(){
+    document.title = "Profile | " + this.$store.state.auth.user.username;
+  }
+};
 </script>

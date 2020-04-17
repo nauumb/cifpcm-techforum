@@ -2,16 +2,14 @@
   <div id="app">
     <div>
       <b-navbar class="py-0" toggleable="md" type="dark" variant="dark">
-        <b-navbar-brand @click.prevent class="">CIFPCM Tech Forum</b-navbar-brand>
+        <b-navbar-brand @click.prevent class>CIFPCM Tech Forum</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item>
-              <router-link to="/home" class="nav-link">
-                <font-awesome-icon icon="home" /> Home
-              </router-link>
+              <router-link to="/home" class="nav-link">Home</router-link>
             </b-nav-item>
 
             <b-nav-item v-if="showAdministratorBoard">
@@ -25,38 +23,34 @@
             <b-nav-item>
               <router-link v-if="currentUser" to="/user" class="nav-link">User Board</router-link>
             </b-nav-item>
-
           </b-navbar-nav>
 
           <b-navbar-nav v-if="!currentUser" class="ml-auto">
             <b-nav-item>
-              <router-link class="mr-1 btn btn-secondary btn-sm nav-link text-light" to="/register">
-              Sign Up
-              </router-link>
+              <router-link
+                class="mr-1 btn btn-secondary btn-sm nav-link text-light"
+                to="/register"
+              >Sign Up</router-link>
             </b-nav-item>
 
             <b-nav-item>
-              <router-link class="ml-1 btn btn-secondary btn-sm nav-link text-light" to="/login">
-              Login
-              </router-link>
+              <router-link
+                class="ml-1 btn btn-secondary btn-sm nav-link text-light"
+                to="/login"
+              >Login</router-link>
             </b-nav-item>
-
           </b-navbar-nav>
 
-
-          <b-navbar-nav v-if="currentUser" class="ml-auto ">
+          <b-navbar-nav v-if="currentUser" class="ml-auto">
             <div class="d-none d-md-block">
               <b-nav-item-dropdown right>
-                <b-dropdown-item disabled>
-                  Signed in as {{currentUser.username}}
-                </b-dropdown-item>
+                <b-dropdown-item disabled>Signed in as {{currentUser.username}}</b-dropdown-item>
                 <b-dropdown-divider></b-dropdown-divider>
                 <template v-slot:button-content>
                   <b-avatar square size="2em"></b-avatar>
                 </template>
                 <b-dropdown-item>
-                  <router-link to="/profile" class="nav-link text-dark">Your profile
-                  </router-link>
+                  <router-link to="/profile" class="nav-link text-dark">Your profile</router-link>
                 </b-dropdown-item>
                 <b-dropdown-divider></b-dropdown-divider>
                 <b-dropdown-item>
@@ -67,16 +61,13 @@
 
             <div class="d-block d-md-none">
               <b-nav-item>
-                <router-link to="/profile" class="nav-link">Your profile
-                </router-link>
+                <router-link to="/profile" class="nav-link">Your profile</router-link>
               </b-nav-item>
 
               <b-nav-item>
                 <a href @click.prevent="logOut" class="nav-link">Sign out</a>
               </b-nav-item>
-
             </div>
-
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -88,29 +79,29 @@
 </template>
 
 <script>
-  export default {
-    computed: {
-      currentUser() {
-        return this.$store.state.auth.user;
-      },
-      showAdministratorBoard() {
-        if (this.currentUser && this.currentUser.roles) {
-          return this.currentUser.roles.includes('ROLE_ADMINISTRATOR');
-        }
-        return false;
-      },
-      showModeratorBoard() {
-        if (this.currentUser && this.currentUser.roles) {
-          return this.currentUser.roles.includes('ROLE_MODERATOR');
-        }
-        return false;
-      }
+export default {
+  computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
     },
-    methods: {
-      logOut() {
-        this.$store.dispatch('auth/logout');
-        this.$router.push('/login');
+    showAdministratorBoard() {
+      if (this.currentUser && this.currentUser.roles) {
+        return this.currentUser.roles.includes("ROLE_ADMINISTRATOR");
       }
+      return false;
+    },
+    showModeratorBoard() {
+      if (this.currentUser && this.currentUser.roles) {
+        return this.currentUser.roles.includes("ROLE_MODERATOR");
+      }
+      return false;
     }
-  };
+  },
+  methods: {
+    logOut() {
+      this.$store.dispatch("auth/logout");
+      this.$router.push("/login");
+    }
+  }
+};
 </script>
