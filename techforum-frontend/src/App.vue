@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <b-navbar class="py-0" toggleable="md" type="dark" variant="dark">
+      <b-navbar class="py-1" toggleable="md" type="dark" variant="dark">
         <b-navbar-brand @click.prevent class>CIFPCM Tech Forum</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -26,14 +26,14 @@
           </b-navbar-nav>
 
           <b-navbar-nav v-if="!currentUser" class="ml-auto">
-            <b-nav-item>
+            <b-nav-item variant="primary">
               <router-link
                 class="mr-1 btn btn-secondary btn-sm nav-link text-light"
                 to="/register"
               >Sign Up</router-link>
             </b-nav-item>
 
-            <b-nav-item>
+            <b-nav-item variant="primary">
               <router-link
                 class="ml-1 btn btn-secondary btn-sm nav-link text-light"
                 to="/login"
@@ -47,7 +47,7 @@
                 <b-dropdown-item disabled>Signed in as {{currentUser.username}}</b-dropdown-item>
                 <b-dropdown-divider></b-dropdown-divider>
                 <template v-slot:button-content>
-                  <b-avatar square size="2em"></b-avatar>
+                  <b-avatar square size="2em">{{getUserNameAbbreviation}}</b-avatar>
                 </template>
                 <b-dropdown-item>
                   <router-link to="/profile" class="nav-link text-dark">Your profile</router-link>
@@ -72,8 +72,35 @@
         </b-collapse>
       </b-navbar>
     </div>
-    <div class="container">
-      <router-view />
+
+    <div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="d-sm-block col-md-2 py-5 px-4 d-sm-block">
+            <div class="">
+              <div class="list-group">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                  Cras justo odio
+                  <span class="badge badge-pill badge-dark">Dark</span>
+                </div>
+
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                  Dapibus ac facilisis in
+                  <span class="badge badge-pill badge-dark">Dark</span>
+                </div>
+
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                  Morbi leo risus
+                  <span class="badge badge-pill badge-dark">Dark</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col px-4">
+            <router-view />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -81,6 +108,10 @@
 <script>
 export default {
   computed: {
+    getUserNameAbbreviation() {
+      let username = this.$store.state.auth.user.username;
+      return username.charAt(0);
+    },
     currentUser() {
       return this.$store.state.auth.user;
     },

@@ -1,7 +1,6 @@
 <template>
   <div>
     <h3 class="m-5">Ask a public question</h3>
-
     <div class="card card-container mx-5 mb-5">
       <div class="card-body m-n4">
         <form class="form-group m-4" @submit.prevent="handleNewComment">

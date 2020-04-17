@@ -7,11 +7,11 @@ class CommentsService {
   ask(post) {
     return axios.post(
       API_URL + 'ask',
-      { headers: authHeader() },
       {
         title: post.title,
         text: post.text,
-      }
+      },
+      { headers: authHeader() }
     )
   }
   get(id) {

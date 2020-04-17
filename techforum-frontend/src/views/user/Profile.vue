@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <header class="jumbotron">
       <h3>
         <strong>{{currentUser.username}}</strong> Profile
