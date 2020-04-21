@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="card card-container">
-      <b-avatar class="align-self-center" size="6rem"></b-avatar>
+      <b-avatar class="align-self-center" variant="dark" size="6rem"></b-avatar>
       <form name="form" @submit.prevent="handleRegister">
         <div v-if="!successful">
           <div class="form-group">
@@ -47,7 +47,7 @@
             >{{errors.first('password')}}</div>
           </div>
           <div class="form-group">
-            <button class="btn btn-secondary btn-block">Sign Up</button>
+            <button class="btn btn-dark btn-block">Sign Up</button>
           </div>
         </div>
       </form>

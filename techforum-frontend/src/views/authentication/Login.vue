@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="card card-container">
-      <b-avatar class="align-self-center" size="6rem"></b-avatar>
+      <b-avatar class="align-self-center" variant="dark" size="6rem"></b-avatar>
       <form name="form" @submit.prevent="handleLogin">
         <div class="form-group">
           <label for="username">Username</label>
@@ -34,7 +34,7 @@
           >Password is required!</div>
         </div>
         <div class="form-group">
-          <button class="btn btn-secondary btn-block" :disabled="loading">
+          <button class="btn btn-dark btn-block" :disabled="loading">
             <span v-show="loading" class="spinner-border spinner-border-sm mr-2"></span>
             <span>Login</span>
           </button>

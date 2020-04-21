@@ -19,53 +19,83 @@
             class="d-block"
           >Include all the information someone would need to answer your question</small>
 
-          <div class="custom-control custom-checkbox d-inline-block mr-2">
-            <input
-              type="checkbox"
-              class="custom-control-input"
-              id="line-numbers"
-              v-model="lineNumbers"
-            />
-            <label class="custom-control-label" for="line-numbers">Linenumbers</label>
-          </div>
-          <div class="custom-control custom-checkbox d-inline-block ml-2 mt-4">
-            <input type="checkbox" class="custom-control-input" id="read-only" v-model="readonly" />
-            <label class="custom-control-label" for="read-only">Read-only</label>
+          <vue-editor v-model="comment.text" :editorToolbar="customToolbar"></vue-editor>
+
+          <div v-if="comment.text">
+            <b-col md="6" class="m-3">
+              <b-icon icon="circle-fill" animation="throb" font-scale="1"></b-icon>
+              <span class="ml-2">Live preview</span>
+            </b-col>
+            <div class="mt-3 mx-5 border border-secondary rounded"><div v-html="comment.text" class="m-3"></div></div>
           </div>
 
-          <prism-editor
-            v-model="comment.text"
-            language="js"
-            :line-numbers="lineNumbers"
-            :readonly="readonly"
-            class="my-editor my-3"
-          />
-
-          <div class="form-group">
-            <button class="btn btn-secondary btn-block" :disabled="loading">
+          <div class="form-group d-flex justify-content-end my-5">
+            <button class="btn btn-outline-dark" :disabled="loading">
               <span v-show="loading" class="spinner-border spinner-border-sm"></span>
-              <span>Post it!</span>
+              <span>Post your question</span>
+            </button>
+
+            <button class="btn btn-outline-danger ml-3">
+              <span>Discard draft</span>
             </button>
           </div>
         </form>
       </div>
     </div>
+
+    <!-- <div class="custom-control custom-checkbox d-inline-block mr-2">
+      <input type="checkbox" class="custom-control-input" id="line-numbers" v-model="lineNumbers" />
+      <label class="custom-control-label" for="line-numbers">Linenumbers</label>
+    </div>-->
+
+    <!-- <div class="custom-control custom-checkbox d-inline-block ml-2 mt-4">
+            <input type="checkbox" class="custom-control-input" id="read-only" v-model="readonly" />
+            <label class="custom-control-label" for="read-only">Read-only</label>
+    </div>-->
+
+    <!-- <prism-editor
+            v-model="comment.text"
+            language="js"
+            :line-numbers="lineNumbers"
+            :readonly="readonly"
+            class="my-editor my-3"
+    />-->
   </div>
 </template>
 <script>
 import Comment from "../../models/comment";
 import CommentService from "../../services/comment.service";
-import "prismjs";
-import "prismjs/themes/prism.css";
+import { VueEditor } from "vue2-editor";
+// import "prismjs";
+// import "prismjs/themes/prism.css";
 
 export default {
+  components: {
+    VueEditor
+  },
   name: "NewComment",
   data() {
     return {
       comment: new Comment("", ""),
-      lineNumbers: true,
-      readonly: false,
-      loading: false,
+      // lineNumbers: true,
+      // readonly: false,
+      // loading: false,
+      customToolbar: [
+        [{ header: [false, 1, 2, 3, 4, 5, 6] }],
+        ["bold", "italic", "underline", "strike"], // toggled buttons
+        [
+          { align: "" },
+          { align: "center" },
+          { align: "right" },
+          { align: "justify" }
+        ],
+        ["blockquote", "code-block"],
+        [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
+        [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+        [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+        ["link"],
+        ["clean"] // remove formatting button
+      ],
       message: ""
     };
   },
@@ -101,6 +131,10 @@ export default {
 </script>
 
 <style>
+pre {
+  background-color: #eff0f1;
+}
+
 .my-editor {
   height: 300px;
 }

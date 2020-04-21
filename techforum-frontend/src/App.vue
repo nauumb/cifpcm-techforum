@@ -15,16 +15,16 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav v-if="!currentUser" class="ml-auto">
-            <b-nav-item variant="primary">
+            <b-nav-item >
               <router-link
-                class="mr-1 btn btn-secondary btn-sm nav-link text-light"
+                class="mr-1 nav-link"
                 to="/register"
               >Sign Up</router-link>
             </b-nav-item>
 
-            <b-nav-item variant="primary">
+            <b-nav-item>
               <router-link
-                class="ml-1 btn btn-secondary btn-sm nav-link text-light"
+                class="ml-1 nav-link "
                 to="/login"
               >Login</router-link>
             </b-nav-item>
@@ -36,7 +36,7 @@
                 <b-dropdown-item disabled>Signed in as {{currentUser.username}}</b-dropdown-item>
                 <b-dropdown-divider></b-dropdown-divider>
                 <template v-slot:button-content>
-                  <b-avatar square size="2em">{{getUserNameAbbreviation}}</b-avatar>
+                  <b-avatar variant="dark" text="" rounded size="2.2em"><span class="mt-2">{{getUserNameAbbreviation}}</span></b-avatar>
                 </template>
                 <b-dropdown-item>
                   <router-link to="/profile" class="nav-link text-dark">Your profile</router-link>
@@ -135,7 +135,7 @@ export default {
   computed: {
     getUserNameAbbreviation() {
       let username = this.$store.state.auth.user.username;
-      return username.charAt(0);
+      return username.charAt(0).toUpperCase();
     },
     currentUser() {
       return this.$store.state.auth.user;
