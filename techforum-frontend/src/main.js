@@ -5,32 +5,24 @@ import store from './store'
 
 import VuePrismEditor from 'vue-prism-editor'
 import 'vue-prism-editor/dist/VuePrismEditor.css'
+Vue.component('prism-editor', VuePrismEditor)
+
 
 import VeeValidate from 'vee-validate'
+Vue.use(VeeValidate)
 
-import { BootstrapVue } from 'bootstrap-vue'
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import {
-  faHome,
-  faUser,
-  faUserPlus,
-  faSignInAlt,
-  faSignOutAlt,
-} from '@fortawesome/free-solid-svg-icons'
+import VuePageTransition from 'vue-page-transition'
+Vue.use(VuePageTransition)
+
 
 Vue.config.productionTip = false
-
-library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt)
-Vue.use(BootstrapVue)
-Vue.use(VeeValidate)
-
-Vue.component('prism-editor', VuePrismEditor)
-Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 new Vue({
   router,

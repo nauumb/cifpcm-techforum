@@ -6,6 +6,7 @@
     <div class="d-flex my-2">
       <router-link class="ml-auto btn btn-outline-secondary" to="/comments/ask">Ask a question</router-link>
     </div>
+    
     <comment></comment>
   </div>
 </template>
@@ -22,7 +23,7 @@ export default {
       content: ""
     };
   },
-  mounted(){
+  mounted() {
     document.title = "CIFPCM Tech Forum | Home";
   }
 };

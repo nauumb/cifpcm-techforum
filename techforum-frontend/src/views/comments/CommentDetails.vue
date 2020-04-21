@@ -18,8 +18,7 @@ export default {
         response => {
           this.comment = response.data;
           console.log(this.comment);
-          this.$router.replace({ path: '/comments/' + this.comment.slug })
-          document.title = 'Comment - details';
+          document.title = 'Comment | details';
         },
         error => {
           this.message =
@@ -32,8 +31,6 @@ export default {
   },
 };
 </script>
-
-
 
 <style scoped>
 </style>

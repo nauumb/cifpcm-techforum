@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-12">
+  <div class="">
     <div class="card card-container">
       <b-avatar class="align-self-center" size="6rem"></b-avatar>
       <form name="form" @submit.prevent="handleRegister">
@@ -119,7 +119,9 @@ label {
 
 .card-container.card {
   max-width: 350px !important;
-  padding: 40px 40px;
+  min-width: 230px;
+  max-height: 800px;
+  padding: 20px 20px;
 }
 
 .card {

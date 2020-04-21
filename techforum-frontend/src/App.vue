@@ -1,30 +1,19 @@
 <template>
   <div id="app">
     <div>
-      <b-navbar class="py-1" toggleable="md" type="dark" variant="dark">
-        <b-navbar-brand @click.prevent class>CIFPCM Tech Forum</b-navbar-brand>
+      <b-navbar class="py-1 border" toggleable="md" type="light" variant="light">
+        <router-link to="/home">
+          <b-navbar-brand>
+            <img
+              id="logo-image"
+              src="https://cifpcesarmanrique.es/wp-content/uploads/2019/01/LogoCMTransparente-BrilloExt.png"
+            />
+          </b-navbar-brand>
+        </router-link>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav>
-            <b-nav-item>
-              <router-link to="/home" class="nav-link">Home</router-link>
-            </b-nav-item>
-
-            <b-nav-item v-if="showAdministratorBoard">
-              <router-link to="/administrator" class="nav-link">Administrator Board</router-link>
-            </b-nav-item>
-
-            <b-nav-item v-if="showModeratorBoard">
-              <router-link to="/moderator" class="nav-link">Moderator Board</router-link>
-            </b-nav-item>
-
-            <b-nav-item>
-              <router-link v-if="currentUser" to="/user" class="nav-link">User Board</router-link>
-            </b-nav-item>
-          </b-navbar-nav>
-
           <b-navbar-nav v-if="!currentUser" class="ml-auto">
             <b-nav-item variant="primary">
               <router-link
@@ -75,9 +64,42 @@
 
     <div>
       <div class="container-fluid">
-        <div class="row">
-          <div class="d-sm-block col-md-2 py-5 px-4 d-sm-block">
-            <div class="">
+        <div id="sidebar-button" class v-b-toggle.sidebar-footer>
+          <b-icon id="button-icon" icon="chevron-compact-right"></b-icon>
+        </div>
+
+        <b-sidebar id="sidebar-footer" aria-label="Sidebar with custom footer" no-header shadow>
+          <template v-slot:footer="{ hide }">
+            <div class="d-flex text-light align-items-center justify-content-end mx-3 my-2">
+              <b-button class="bg-light text-dark" size="sm" @click="hide">
+                <b-icon icon="x"></b-icon>
+              </b-button>
+            </div>
+          </template>
+          <div class="mx-3 my-2">
+            <b-navbar-nav>
+              <b-nav-item>
+                <router-link to="/home" class="nav-link text-dark">Home</router-link>
+              </b-nav-item>
+
+              <b-nav-item v-if="showAdministratorBoard">
+                <router-link to="/administrator" class="nav-link text-dark">Administrator Board</router-link>
+              </b-nav-item>
+
+              <b-nav-item v-if="showModeratorBoard">
+                <router-link to="/moderator" class="nav-link text-dark">Moderator Board</router-link>
+              </b-nav-item>
+
+              <b-nav-item>
+                <router-link v-if="currentUser" to="/user" class="nav-link text-dark">User Board</router-link>
+              </b-nav-item>
+            </b-navbar-nav>
+          </div>
+        </b-sidebar>
+
+        <div class="row mx-3 align-items-center">
+          <!-- <div class="d-sm-block col-md-2 py-5 px-4 d-sm-block">
+            <div class>
               <div class="list-group">
                 <div class="list-group-item d-flex justify-content-between align-items-center">
                   Cras justo odio
@@ -95,9 +117,12 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col px-4">
-            <router-view />
+          </div>-->
+
+          <div class="col">
+            <vue-page-transition name="fade-in-left">
+              <router-view />
+            </vue-page-transition>
           </div>
         </div>
       </div>
@@ -136,3 +161,18 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+#logo-image {
+  height: 45px;
+}
+#sidebar-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#button-icon {
+  height: 80px;
+}
+</style>

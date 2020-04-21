@@ -1,7 +1,7 @@
 <template>
-  <div class="list-group">
+  <div id="fade-in-left-transition" class="list-group">
     <router-link
-      :to="{ name: 'commentDetails', params: { commentId: item.id}}"
+      :to="{ name: 'commentDetails', params: { commentId: item.id, slug: item.slug}}"
       class="list-group-item list-group-item-action"
       v-for="(item,index) in content"
       :key="index"
@@ -31,6 +31,8 @@ export default {
     UserService.getPublicContent().then(
       response => {
         this.content = response.data;
+        var element = document.getElementById("fade-in-left-transition");
+        element.classList.add("fade-in-left");
         console.log(this.content);
       },
       error => {
@@ -52,4 +54,17 @@ export default {
 </script>
 
 <style scoped>
+.fade-in-left {
+  animation: fade-in-left 2s;
+}
+@keyframes fade-in-left {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
 </style>

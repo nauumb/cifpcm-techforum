@@ -10,18 +10,22 @@ export const router = new Router({
       path: '/',
       name: 'home',
       component: () => import('./views/Home.vue'),
+      meta: { transition: 'zoom' },
     },
     {
       path: '/home',
       component: () => import('./views/Home.vue'),
+      meta: { transition: 'zoom' },
     },
     {
       path: '/login',
       component: () => import('./views/authentication/Login.vue'),
+      meta: { transition: 'zoom' },
     },
     {
       path: '/register',
       component: () => import('./views/authentication/Register.vue'),
+      meta: { transition: 'zoom' },
     },
     {
       path: '/profile',
@@ -49,7 +53,7 @@ export const router = new Router({
       component: () => import('./views/comments/NewComment.vue'),
     },
     {
-      path: '/comments/:commentId',
+      path: '/comments/:commentId/:slug',
       name: 'commentDetails',
       component: () => import('./views/comments/CommentDetails.vue'),
       props: true,

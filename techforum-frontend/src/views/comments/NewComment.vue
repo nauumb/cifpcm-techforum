@@ -95,7 +95,7 @@ export default {
     }
   },
   mounted() {
-    document.title = "Comments - new comment";
+    document.title = "Comment | new comment";
   }
 };
 </script>
