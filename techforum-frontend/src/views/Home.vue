@@ -1,13 +1,14 @@
 <template>
-  <div>
-    <header class="my-4">
-      <h3>Top Comments</h3>
-    </header>
-    <div class="d-flex my-2">
-      <router-link class="ml-auto btn btn-outline-dark" to="/comments/ask">Ask a question</router-link>
+  <div class="row mx-4 align-items-center">
+    <div class="col">
+      <header class="my-4">
+        <h3>Top Comments</h3>
+      </header>
+      <div class="d-flex my-2">
+        <router-link class="ml-auto btn btn-outline-dark" to="/comments/ask">Ask a question</router-link>
+      </div>
+      <comment></comment>
     </div>
-    
-    <comment></comment>
   </div>
 </template>
 

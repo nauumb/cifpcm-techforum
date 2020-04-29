@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div>
+  <div id="page-content">
+    <div id="navbar">
       <b-navbar class="py-1 border" toggleable="md" type="light" variant="light">
         <router-link to="/home">
           <b-navbar-brand>
@@ -15,18 +15,12 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav v-if="!currentUser" class="ml-auto">
-            <b-nav-item >
-              <router-link
-                class="mr-1 nav-link"
-                to="/register"
-              >Sign Up</router-link>
+            <b-nav-item>
+              <router-link class="mr-1 nav-link" to="/register">Sign Up</router-link>
             </b-nav-item>
 
             <b-nav-item>
-              <router-link
-                class="ml-1 nav-link "
-                to="/login"
-              >Login</router-link>
+              <router-link class="ml-1 nav-link" to="/login">Login</router-link>
             </b-nav-item>
           </b-navbar-nav>
 
@@ -36,7 +30,9 @@
                 <b-dropdown-item disabled>Signed in as {{currentUser.username}}</b-dropdown-item>
                 <b-dropdown-divider></b-dropdown-divider>
                 <template v-slot:button-content>
-                  <b-avatar variant="dark" text="" rounded size="2.2em"><span class="mt-2">{{getUserNameAbbreviation}}</span></b-avatar>
+                  <b-avatar variant="dark" text rounded size="2.2em">
+                    <span id="userNameAbbreviation">{{getUserNameAbbreviation}}</span>
+                  </b-avatar>
                 </template>
                 <b-dropdown-item>
                   <router-link to="/profile" class="nav-link text-dark">Your profile</router-link>
@@ -97,36 +93,19 @@
           </div>
         </b-sidebar>
 
-        <div class="row mx-3 align-items-center">
-          <!-- <div class="d-sm-block col-md-2 py-5 px-4 d-sm-block">
-            <div class>
-              <div class="list-group">
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                  Cras justo odio
-                  <span class="badge badge-pill badge-dark">Dark</span>
-                </div>
-
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                  Dapibus ac facilisis in
-                  <span class="badge badge-pill badge-dark">Dark</span>
-                </div>
-
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                  Morbi leo risus
-                  <span class="badge badge-pill badge-dark">Dark</span>
-                </div>
-              </div>
-            </div>
-          </div>-->
-
-          <div class="col">
-            <vue-page-transition name="fade-in-left">
-              <router-view />
-            </vue-page-transition>
-          </div>
-        </div>
+        <vue-page-transition name="fade-in-left">
+          <router-view />
+        </vue-page-transition>
       </div>
     </div>
+
+    <div id="push"></div>
+
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+      <div class="container text-center">
+        <small>Copyright &copy; Your Website</small>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -163,6 +142,9 @@ export default {
 </script>
 
 <style scoped>
+#push{
+  margin-bottom: 8em;
+}
 #logo-image {
   height: 45px;
 }
@@ -171,8 +153,15 @@ export default {
   top: 50%;
   transform: translateY(-50%);
 }
-
 #button-icon {
   height: 80px;
+}
+#userNameAbbreviation {
+  margin-top: 9px;
+}
+#sticky-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 </style>
