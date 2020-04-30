@@ -6,7 +6,7 @@
       v-for="(item,index) in content"
       :key="index"
     >
-      <div class="d-flex w-100 justify-content-between">
+      <div class="d-flex w-100 align-items-center justify-content-between">
         <h5 class="mb-1">{{ item.title }}</h5>
         <small>{{ item.posted | moment }}</small>
       </div>

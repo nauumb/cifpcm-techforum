@@ -58,10 +58,10 @@
       </b-navbar>
     </div>
 
-    <div>
+    <div id="body-content">
       <div class="container-fluid">
         <div id="sidebar-button" class v-b-toggle.sidebar-footer>
-          <b-icon id="button-icon" icon="chevron-compact-right"></b-icon>
+          <b-icon id="button-icon" icon="list"></b-icon>
         </div>
 
         <b-sidebar id="sidebar-footer" aria-label="Sidebar with custom footer" no-header shadow>
@@ -93,15 +93,17 @@
           </div>
         </b-sidebar>
 
-        <vue-page-transition name="fade-in-left">
-          <router-view />
-        </vue-page-transition>
+        <div id="route-content">
+          <vue-page-transition name="fade-in-left">
+            <router-view />
+          </vue-page-transition>
+        </div>
       </div>
     </div>
 
     <div id="push"></div>
 
-    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <footer id="sticky-footer" class="footer py-4 bg-dark text-white-50">
       <div class="container text-center">
         <small>Copyright &copy; Your Website</small>
       </div>
@@ -142,26 +144,34 @@ export default {
 </script>
 
 <style scoped>
-#push{
+#page-content {
+  min-height: calc(100vh - 70px);
+}
+#route-content {
+  margin-left: 80px;
+  margin-right: 30px;
+}
+#push {
   margin-bottom: 8em;
 }
 #logo-image {
   height: 45px;
 }
 #sidebar-button {
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
 }
 #button-icon {
   height: 80px;
+  width: 30px;
+  font-size: 2em;
 }
 #userNameAbbreviation {
   margin-top: 9px;
 }
 #sticky-footer {
-  position: fixed;
-  bottom: 0;
+  height: 70px;
   width: 100%;
 }
 </style>
