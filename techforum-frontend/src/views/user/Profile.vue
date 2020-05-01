@@ -1,34 +1,47 @@
 <template>
   <div id="profile-content">
     <div class="row my-5 justify-content-center">
-      <div class="col-xs-12 col-md-5 col-lg-2 mb-5">
+      <div class="col-xs-12 col-md-4 col-lg-2 mb-5">
         <div id="avatar-container">
-          <b-avatar class="d-block mb-2" variant="dark" square size="10em">
+          <b-avatar class="d-block mb-2" variant="dark" rounded size="10em">
             <span id="userNameAbbreviation">{{getUserNameAbbreviation}}</span>
           </b-avatar>
-          <div class="p-1">Website:</div>
-          <div class="p-1">Github:</div>
+        </div>
+        <div class="pt-1">
+          <span class="pr-2">Website:</span>
+          <span>{{currentUser.website}}</span>
+        </div>
+        <div class="pt-1">
+          <span class="pr-2">Github:</span>
+          <span>{{currentUser.github}}</span>
         </div>
       </div>
-
       <div class="col">
         <div class="card-deck">
           <div class="card">
+            <h5 class="card-header bg-dark text-white">User details</h5>
             <div class="card-body">
-              <h5 class="card-title">User details</h5>
               <div class="card-text">
-                <ul class="list-group list-group-flush mt-4">
+                <ul class="list-group list-group-flush">
                   <li class="list-group-item">
                     <span class="pr-2">Username:</span>
-                    <span>{{currentUser.username}}</span>
+                    <span class="font-italic">{{currentUser.username}}</span>
                   </li>
                   <li class="list-group-item">
                     <span class="pr-2">Email:</span>
-                    <span>{{currentUser.email}}</span>
+                    <span class="font-italic">{{currentUser.email}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <span class="pr-2">Joined:</span>
+                    <span class="font-italic">{{currentUser.joined | moment}}</span>
                   </li>
                   <li class="list-group-item">
                     <span class="pr-2">Authorities:</span>
-                    <span class="pr-1" v-for="(role,index) in currentUser.roles" :key="index">
+                    <span
+                      class="pr-1 font-italic"
+                      v-for="(role,index) in currentUser.roles"
+                      :key="index"
+                    >
                       <span v-if="index != 0">,</span>
                       {{role | formatRole}}
                     </span>
@@ -39,13 +52,25 @@
           </div>
 
           <div class="card">
+            <h5 class="card-header bg-dark text-white">Personal details</h5>
             <div class="card-body">
-              <h5 class="card-title">Personal details</h5>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">First name:</li>
-                <li class="list-group-item">Last name:</li>
-                <li class="list-group-item">Gender:</li>
-                <li class="list-group-item">Location:</li>
+                <li class="list-group-item">
+                  <span class="pr-2">First Name:</span>
+                  <span class="font-italic">{{currentUser.firstName}}</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="pr-2">Last name:</span>
+                  <span class="font-italic">{{currentUser.lastName}}</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="pr-2">Gender:</span>
+                  <span class="font-italic">{{currentUser.gender}}</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="pr-2">Location:</span>
+                  <span class="font-italic">{{currentUser.location}}</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -55,7 +80,7 @@
     <div id="about-lastestpost" class="row justify-content-center">
       <div class="col-xs-12 col-md-6">
         <div class="card-deck">
-          <div class="card">
+          <div class="card border-secondary">
             <div class="card-body">
               <h5 class="card-title">About</h5>
               <div class="card-text"></div>
@@ -65,7 +90,7 @@
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="card-deck">
-          <div class="card">
+          <div class="card border-secondary">
             <div class="card-body">
               <h5 class="card-title">Lastest posts</h5>
               <div class="card-text"></div>
@@ -82,6 +107,8 @@
         // </div>
 
 <script>
+import moment from "moment";
+
 export default {
   name: "Profile",
   computed: {
@@ -101,6 +128,9 @@ export default {
       let cutPoint = role.indexOf("_");
       role = role.substring(cutPoint + 1).toLowerCase();
       return role;
+    },
+    moment: function(date) {
+      return moment(date).format("MMMM Do YYYY");
     }
   }
 };

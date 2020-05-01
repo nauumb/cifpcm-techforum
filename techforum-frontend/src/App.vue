@@ -171,6 +171,8 @@ export default {
   margin-top: 9px;
 }
 #sticky-footer {
+  position: fixed;
+  bottom: 0;
   height: 70px;
   width: 100%;
 }

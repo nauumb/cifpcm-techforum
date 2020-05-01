@@ -1,5 +1,6 @@
 package es.cifpcm.techforum.controllers;
 
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -73,6 +74,14 @@ public class AuthController {
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
+                userDetails.getFirstName(),
+                userDetails.getLastName(),
+                userDetails.getGender(),
+                userDetails.getLocation(),
+                userDetails.getWebsite(),
+                userDetails.getGithub(),
+                userDetails.getAbout(),
+                userDetails.getJoined(),
                 roles));
     }
 
@@ -90,10 +99,11 @@ public class AuthController {
                     .body(new MessageResponse("Error: Email is already in use!"));
         }
 
-        // Create new user's account
-        User user = new User(signUpRequest.getUsername(),
-                signUpRequest.getEmail(),
-                encoder.encode(signUpRequest.getPassword()));
+        // Create new user's account with initial settings
+        User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(),
+                encoder.encode(signUpRequest.getPassword()),"not specified","not specified",
+                "not specified", "not specified","not specified","not specified",
+                "type something about you", Instant.now());
 
         Set<String> strRoles = signUpRequest.getRoles();
         Set<Role> roles = new HashSet<>();
