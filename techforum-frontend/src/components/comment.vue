@@ -9,25 +9,29 @@
       >
         <div class="d-flex w-100 align-items-center justify-content-between">
           <h5 class="mb-1">{{ item.title }}</h5>
-          <small>{{ item.posted | moment }}</small>
+          <small>{{ item.posted | shortDate }}</small>
         </div>
         <div class="d-flex justify-content-end">
           <small class="text-right">{{ item.author.username}}</small>
         </div>
       </router-link>
     </div>
-    <nav id="pagination-nav" class="d-flex justify-content-end mt-2" v-if="content != ''">
+    <nav
+      id="pagination-nav"
+      class="fade-in-left d-flex justify-content-end mt-2"
+      v-if="content.length > 7"
+    >
       <ul class="pagination">
         <li class="page-item">
           <button
-            class="page-link text-dark"
+            class="page-link border-secondary text-dark"
             :disabled="pageNumber === 0"
             @click="prevPage"
           >Previous</button>
         </li>
         <li class="page-item">
           <button
-            class="page-link text-dark"
+            class="page-link border-secondary text-dark"
             :disabled="pageNumber >= pageCount -1"
             @click="nextPage"
           >Next</button>
@@ -44,9 +48,9 @@ import moment from "moment";
 export default {
   data() {
     return {
-      content: '',
+      content: "",
       pageNumber: 0,
-      size: 7,
+      size: 7
     };
   },
   methods: {
@@ -86,7 +90,7 @@ export default {
     );
   },
   filters: {
-    moment: function(date) {
+    shortDate: function(date) {
       return moment(date)
         .local()
         .fromNow();

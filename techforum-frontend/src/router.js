@@ -49,13 +49,19 @@ export const router = new Router({
     },
     {
       path: '/comments/ask',
-      name: 'NewComment',
+      name: 'newComment',
       component: () => import('./views/comments/NewComment.vue'),
     },
     {
       path: '/comments/:commentId/:slug',
       name: 'commentDetails',
       component: () => import('./views/comments/CommentDetails.vue'),
+      props: true,
+    },
+    {
+      path: '/comments/:commentId/edit',
+      name: 'commetEdit',
+      component: () => import('./views/comments/EditComment.vue'),
       props: true,
     },
   ],

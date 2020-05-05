@@ -18,30 +18,26 @@
       </div>
       <div class="col">
         <div class="card-deck">
-          <div class="card">
-            <h5 class="card-header bg-dark text-white">User details</h5>
+          <div class="card border-secondary">
+            <h5 class="card-header bg-white text-dark">User details</h5>
             <div class="card-body">
               <div class="card-text">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
                     <span class="pr-2">Username:</span>
-                    <span class="font-italic">{{currentUser.username}}</span>
+                    <span class>{{currentUser.username}}</span>
                   </li>
                   <li class="list-group-item">
                     <span class="pr-2">Email:</span>
-                    <span class="font-italic">{{currentUser.email}}</span>
+                    <span class>{{currentUser.email}}</span>
                   </li>
                   <li class="list-group-item">
                     <span class="pr-2">Joined:</span>
-                    <span class="font-italic">{{currentUser.joined | moment}}</span>
+                    <span class>{{currentUser.joined | completeDate}}</span>
                   </li>
                   <li class="list-group-item">
                     <span class="pr-2">Authorities:</span>
-                    <span
-                      class="pr-1 font-italic"
-                      v-for="(role,index) in currentUser.roles"
-                      :key="index"
-                    >
+                    <span class="pr-1" v-for="(role,index) in currentUser.roles" :key="index">
                       <span v-if="index != 0">,</span>
                       {{role | formatRole}}
                     </span>
@@ -51,25 +47,25 @@
             </div>
           </div>
 
-          <div class="card">
-            <h5 class="card-header bg-dark text-white">Personal details</h5>
+          <div class="card border-secondary">
+            <h5 class="card-header bg-white text-dark">Personal details</h5>
             <div class="card-body">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   <span class="pr-2">First Name:</span>
-                  <span class="font-italic">{{currentUser.firstName}}</span>
+                  <span class>{{currentUser.firstName}}</span>
                 </li>
                 <li class="list-group-item">
                   <span class="pr-2">Last name:</span>
-                  <span class="font-italic">{{currentUser.lastName}}</span>
+                  <span class>{{currentUser.lastName}}</span>
                 </li>
                 <li class="list-group-item">
                   <span class="pr-2">Gender:</span>
-                  <span class="font-italic">{{currentUser.gender}}</span>
+                  <span class>{{currentUser.gender}}</span>
                 </li>
                 <li class="list-group-item">
                   <span class="pr-2">Location:</span>
-                  <span class="font-italic">{{currentUser.location}}</span>
+                  <span class>{{currentUser.location}}</span>
                 </li>
               </ul>
             </div>
@@ -77,22 +73,22 @@
         </div>
       </div>
     </div>
-    <div id="about-lastestpost" class="row justify-content-center">
-      <div class="col-xs-12 col-md-6">
+    <div id="about-lastestpost" class="row justify-content-end">
+      <div class="col-xs-12 col-md-5">
         <div class="card-deck">
           <div class="card border-secondary">
+            <h5 class="card-header bg-white text-dark">About</h5>
             <div class="card-body">
-              <h5 class="card-title">About</h5>
               <div class="card-text"></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 col-md-5">
         <div class="card-deck">
           <div class="card border-secondary">
+            <h5 class="card-header bg-white text-dark">Lastest posts</h5>
             <div class="card-body">
-              <h5 class="card-title">Lastest posts</h5>
               <div class="card-text"></div>
             </div>
           </div>
@@ -129,7 +125,7 @@ export default {
       role = role.substring(cutPoint + 1).toLowerCase();
       return role;
     },
-    moment: function(date) {
+    completeDate: function(date) {
       return moment(date).format("MMMM Do YYYY");
     }
   }
@@ -137,9 +133,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-  height: 100%;
-}
 #avatar-container {
   min-width: 10em;
   max-width: 10em;
@@ -162,7 +155,7 @@ body {
     margin-top: 100px;
   }
 }
-@media (min-width: 576px) {
+@media (min-width: 375px) {
   .card-deck {
     min-height: 200px;
   }

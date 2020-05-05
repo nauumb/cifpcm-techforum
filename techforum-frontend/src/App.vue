@@ -16,11 +16,11 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav v-if="!currentUser" class="ml-auto">
             <b-nav-item>
-              <router-link class="mr-1 nav-link" to="/register">Sign Up</router-link>
+              <router-link class="mr-1 nav-link" to="/register">Sign up</router-link>
             </b-nav-item>
 
             <b-nav-item>
-              <router-link class="ml-1 nav-link" to="/login">Login</router-link>
+              <router-link class="ml-1 nav-link" to="/login">Sign in</router-link>
             </b-nav-item>
           </b-navbar-nav>
 
@@ -103,7 +103,7 @@
 
     <div id="push"></div>
 
-    <footer id="sticky-footer" class="footer py-4 bg-dark text-white-50">
+    <footer id="sticky-footer" class="footer py-4 bg-light border">
       <div class="container text-center">
         <small>Copyright &copy; Your Website</small>
       </div>
@@ -143,12 +143,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #page-content {
-  min-height: calc(100vh - 70px);
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.30769231;
 }
 #route-content {
-  margin-left: 80px;
+  margin-left: 60px;
   margin-right: 30px;
 }
 #push {
@@ -158,6 +159,7 @@ export default {
   height: 45px;
 }
 #sidebar-button {
+  margin-right: 30px;
   position: fixed;
   top: 50%;
   transform: translateY(-50%);

@@ -75,7 +75,8 @@ public class User {
         this.joined = joined;
     }
 
-    public User(String username, String email, Set<Role> roles) {
+    public User(String id,String username, String email, Set<Role> roles) {
+        this.id = id;
         this.username = username;
         this.email = email;
         this.roles = roles;

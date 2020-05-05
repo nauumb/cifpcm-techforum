@@ -1,6 +1,6 @@
 <template>
-  <div id="home-content" class="row ml-3 align-items-center">
-    <div class="col-9 mb-auto">
+  <div id="home-content" class="row align-items-center justify-content-center m-auto">
+    <div class="col-11 mb-auto p-0">
       <header class="my-4">
         <h3>Top Comments</h3>
       </header>
@@ -8,26 +8,6 @@
         <router-link class="ml-auto btn btn-outline-dark" to="/comments/ask">Ask a question</router-link>
       </div>
       <comment></comment>
-    </div>
-    <div
-      class="col d-flex flex-column align-items-center justify-content-center align-self-start mt-5"
-    >
-      <div class="card mb-5" style="width: 20rem;">
-        <div class="card-header">Categories</div>
-        <ul class="list-group">
-          <li class="list-group-item">JavaScript</li>
-          <li class="list-group-item">Java</li>
-          <li class="list-group-item">C#</li>
-        </ul>
-      </div>
-      <div class="card" style="width: 20rem;">
-        <div class="card-header">Hot Network Questions</div>
-        <ul class="list-group">
-          <li class="list-group-item">question</li>
-          <li class="list-group-item">question</li>
-          <li class="list-group-item">question</li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
@@ -41,7 +21,7 @@ export default {
   },
   data() {
     return {
-      content: "",
+      content: ""
     };
   },
   mounted() {
@@ -49,3 +29,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+#home-content {
+  min-width: 70%;
+  max-width: 70%;
+}
+</style>

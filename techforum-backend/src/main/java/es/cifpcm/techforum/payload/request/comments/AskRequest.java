@@ -9,7 +9,6 @@ public class AskRequest {
     private String title;
 
     @NotBlank
-    @Size(max = 500)
     private String text;
 
     public String getText() {

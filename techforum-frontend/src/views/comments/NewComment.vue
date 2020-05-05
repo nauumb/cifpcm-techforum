@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="newcomment-form" class="m-auto">
     <div class="row align-items-center">
       <div class="col">
         <h3 class="m-5">Ask a public question</h3>
@@ -107,10 +107,19 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+#newcomment-form {
+  min-width: 70%;
+  max-width: 70%;
+}
 pre {
+  border-radius: 5px;
+  padding: 20px;
   background-color: #eff0f1;
 }
 </style>
+
+
+
 
 

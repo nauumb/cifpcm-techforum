@@ -58,7 +58,7 @@ public class CommentController {
             findRole(roles, role, roleRepository);
         });
 
-        User user = new User(userDetails.getUsername(), userDetails.getEmail() ,roles);
+        User user = new User(userDetails.getId(),userDetails.getUsername(), userDetails.getEmail() ,roles);
         ObjectId discussion_id = ObjectId.get();
         String slug =  new Slugify().slugify(askRequest.getTitle());
 
