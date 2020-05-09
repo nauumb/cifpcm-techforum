@@ -144,6 +144,9 @@ export default {
 </script>
 
 <style>
+a[role="menuitem"]:active{
+  background: white;
+}
 #page-content {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.30769231;

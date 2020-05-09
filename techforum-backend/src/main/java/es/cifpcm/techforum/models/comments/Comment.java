@@ -1,6 +1,5 @@
 package es.cifpcm.techforum.models.comments;
 
-import com.mongodb.BasicDBObject;
 import es.cifpcm.techforum.models.authorization.User;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -9,7 +8,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.time.Instant;
-import java.util.Date;
 @Document(collection = "comments")
 public class Comment {
     @Id
@@ -25,7 +23,6 @@ public class Comment {
     @NotBlank
     private String text;
     private String slug;
-    private String full_slug;
     private Instant posted;
     private User author;
 
@@ -34,25 +31,22 @@ public class Comment {
     }
 
     public Comment(ObjectId discussion_id,ObjectId parent_id
-            ,String title, String text, String slug,String full_slug,Instant posted, User author) {
+            ,String title, String text, String slug,Instant posted, User author) {
         this.discussion_id =  discussion_id;
         this.parent_id = parent_id;
         this.title = title;
         this.text = text;
         this.slug = slug;
-        this.full_slug = full_slug;
         this.posted = posted;
         this.author = author;
     }
 
     public Comment(ObjectId discussion_id,String title, String text,
-                   String slug,String full_slug,Instant posted, User author) {
+                   String slug,Instant posted, User author) {
         this.discussion_id =  discussion_id;
-        this.parent_id = parent_id;
         this.title = title;
         this.text = text;
         this.slug = slug;
-        this.full_slug = full_slug;
         this.posted = posted;
         this.author = author;
     }
@@ -104,14 +98,6 @@ public class Comment {
 
     public void setSlug(String slug) {
         this.slug = slug;
-    }
-
-    public String getFull_slug() {
-        return full_slug;
-    }
-
-    public void setFull_slug(String full_slug) {
-        this.full_slug = full_slug;
     }
 
     public Instant getPosted(){

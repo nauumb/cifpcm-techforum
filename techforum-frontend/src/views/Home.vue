@@ -5,7 +5,7 @@
         <h3>Top Comments</h3>
       </header>
       <div class="d-flex my-2">
-        <router-link class="ml-auto btn btn-outline-dark" to="/comments/ask">Ask a question</router-link>
+        <router-link class="btn btn-sm btn-outline-dark ml-auto " to="/comments/post">Ask a question</router-link>
       </div>
       <comment></comment>
     </div>

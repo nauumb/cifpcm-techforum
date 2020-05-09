@@ -2,7 +2,7 @@
   <div id="newcomment-form" class="m-auto">
     <div class="row align-items-center">
       <div class="col">
-        <h3 class="m-5">Ask a public question</h3>
+        <h3 class="mx-5 mt-5">Ask a public question</h3>
         <div class="card card-container mb-5">
           <div class="card-body m-n4">
             <form class="form-group m-4" @submit.prevent="handleNewComment">
@@ -36,11 +36,11 @@
               </div>
 
               <div class="form-group d-flex justify-content-end my-5">
-                <button class="btn btn-outline-dark">
+                <button class="btn btn-sm btn-outline-dark">
                   <span>Post your question</span>
                 </button>
 
-                <button class="btn btn-outline-danger ml-3">
+                <button class="btn btn-sm btn-outline-danger ml-3">
                   <span>Discard draft</span>
                 </button>
               </div>
@@ -63,7 +63,7 @@ export default {
   name: "NewComment",
   data() {
     return {
-      comment: new Comment("", ""),
+      comment: new Comment("", "", ""),
       customToolbar: [
         [{ header: [false, 1, 2, 3, 4, 5, 6] }],
         ["bold", "italic", "underline", "strike"], // toggled buttons
@@ -78,7 +78,6 @@ export default {
   },
   methods: {
     handleNewComment() {
-      this.loading = true;
       CommentService.ask(this.comment).then(
         response => {
           this.message = response.data;
@@ -91,7 +90,6 @@ export default {
             error.message ||
             error.toString();
           console.log(this.message);
-          this.loading = false;
         }
       );
     }
@@ -108,14 +106,15 @@ export default {
 </script>
 
 <style scoped>
-#newcomment-form {
-  min-width: 70%;
-  max-width: 70%;
+h3 {
+  background-image: url("https://cdn.sstatic.net/Img/ask/background.svg?v=2e9a8205b368");
+  background-repeat: no-repeat;
+  height: 100px;
+  background-position: right bottom !important;
 }
-pre {
-  border-radius: 5px;
-  padding: 20px;
-  background-color: #eff0f1;
+#newcomment-form {
+  min-width: 60%;
+  max-width: 60%;
 }
 </style>
 

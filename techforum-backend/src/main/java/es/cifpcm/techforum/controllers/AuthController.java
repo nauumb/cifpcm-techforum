@@ -100,9 +100,10 @@ public class AuthController {
         }
 
         // Create new user's account with initial settings
+        final String defaultValue = "not specified";
         User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(),
-                encoder.encode(signUpRequest.getPassword()),"not specified","not specified",
-                "not specified", "not specified","not specified","not specified",
+                encoder.encode(signUpRequest.getPassword()),defaultValue,defaultValue,
+                defaultValue, defaultValue,defaultValue,defaultValue,
                 "type something about you", Instant.now());
 
         Set<String> strRoles = signUpRequest.getRoles();

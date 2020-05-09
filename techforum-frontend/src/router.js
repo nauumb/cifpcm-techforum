@@ -48,7 +48,7 @@ export const router = new Router({
       component: () => import('./views/user/boards/BoardUser.vue'),
     },
     {
-      path: '/comments/ask',
+      path: '/comments/post',
       name: 'newComment',
       component: () => import('./views/comments/NewComment.vue'),
     },
@@ -59,8 +59,20 @@ export const router = new Router({
       props: true,
     },
     {
+      path: '/comments/:commentId',
+      name: 'commentDetails',
+      component: () => import('./views/comments/CommentDetails.vue'),
+      props: true,
+    },
+    {
       path: '/comments/:commentId/edit',
-      name: 'commetEdit',
+      name: 'editComment',
+      component: () => import('./views/comments/EditComment.vue'),
+      props: true,
+    },
+    {
+      path: '/comments/:commentId/:parentId/edit',
+      name: 'editAnswer',
       component: () => import('./views/comments/EditComment.vue'),
       props: true,
     },

@@ -73,21 +73,11 @@
         </div>
       </div>
     </div>
-    <div id="about-lastestpost" class="row justify-content-end">
-      <div class="col-xs-12 col-md-5">
+    <div id="about-lastestpost" class="row justify-content-center">
+      <div class="col-xs-12 col-md-6">
         <div class="card-deck">
           <div class="card border-secondary">
             <h5 class="card-header bg-white text-dark">About</h5>
-            <div class="card-body">
-              <div class="card-text"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-5">
-        <div class="card-deck">
-          <div class="card border-secondary">
-            <h5 class="card-header bg-white text-dark">Lastest posts</h5>
             <div class="card-body">
               <div class="card-text"></div>
             </div>

@@ -1,7 +1,7 @@
 package es.cifpcm.techforum.controllers;
 
 import es.cifpcm.techforum.models.comments.Comment;
-import es.cifpcm.techforum.security.services.comments.CommentService;
+import es.cifpcm.techforum.repository.comments.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,11 +17,11 @@ import java.util.List;
 public class BoardController {
 
     @Autowired
-    private CommentService commentService;
+    private CommentRepository commentRepository;
 
     @GetMapping("/all")
     public List<Comment> allAccess() {
-        return commentService.findAll();
+        return commentRepository.findAllQuestions();
     }
 
     @GetMapping("/user")
