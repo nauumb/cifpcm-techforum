@@ -76,11 +76,6 @@ public class AuthController {
                 userDetails.getEmail(),
                 userDetails.getFirstName(),
                 userDetails.getLastName(),
-                userDetails.getGender(),
-                userDetails.getLocation(),
-                userDetails.getWebsite(),
-                userDetails.getGithub(),
-                userDetails.getAbout(),
                 userDetails.getJoined(),
                 roles));
     }
@@ -100,11 +95,10 @@ public class AuthController {
         }
 
         // Create new user's account with initial settings
-        final String defaultValue = "not specified";
+
         User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(),
-                encoder.encode(signUpRequest.getPassword()),defaultValue,defaultValue,
-                defaultValue, defaultValue,defaultValue,defaultValue,
-                "type something about you", Instant.now());
+                encoder.encode(signUpRequest.getPassword()),signUpRequest.getFirstName(),signUpRequest.getLastName(),
+               Instant.now());
 
         Set<String> strRoles = signUpRequest.getRoles();
         Set<Role> roles = new HashSet<>();

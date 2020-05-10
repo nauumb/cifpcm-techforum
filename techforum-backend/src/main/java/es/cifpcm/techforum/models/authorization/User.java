@@ -30,22 +30,6 @@ public class User {
 
     @Size(max = 25)
     private String lastName;
-
-    @Size(max = 6)
-    private String gender;
-
-    @Size(max = 50)
-    private String location;
-
-    @Size(max = 100)
-    private String website;
-
-    @Size(max = 100)
-    private String github;
-
-    @Size(max = 300)
-    private String about;
-
     @NotBlank
     private Instant joined;
 
@@ -61,17 +45,12 @@ public class User {
     }
 
     public User(String username, String email, String password, String firstName, String lastName,
-                String gender,String location, String website, String github,String about,Instant joined) {
+               Instant joined) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.gender = gender;
-        this.location = location;
-        this.website = website;
-        this.github = github;
-        this.about = about;
         this.joined = joined;
     }
 
@@ -138,38 +117,6 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
-    }
-
-    public String getGithub() {
-        return github;
-    }
-
-    public void setGithub(String github) {
-        this.github = github;
-    }
-
     public Instant getJoined() {
         return joined;
     }
@@ -178,7 +125,5 @@ public class User {
         this.joined = joined;
     }
 
-    public String getAbout() {
-        return about;
-    }
+
 }

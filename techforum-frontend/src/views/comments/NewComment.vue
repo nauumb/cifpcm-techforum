@@ -81,7 +81,6 @@ export default {
       CommentService.ask(this.comment).then(
         response => {
           this.message = response.data;
-          console.log(this.message);
           this.$router.push("/");
         },
         error => {
@@ -89,7 +88,6 @@ export default {
             (error.response && error.response.data) ||
             error.message ||
             error.toString();
-          console.log(this.message);
         }
       );
     }

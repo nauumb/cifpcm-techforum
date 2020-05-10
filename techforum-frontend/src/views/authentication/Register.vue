@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class>
     <div class="card card-container">
       <b-avatar class="align-self-center" variant="dark" size="6rem"></b-avatar>
       <form name="form" @submit.prevent="handleRegister">
@@ -18,6 +18,37 @@
               class="alert-danger"
             >{{errors.first('username')}}</div>
           </div>
+
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input
+              v-model="user.firstName"
+              v-validate="'required|min:3|max:20'"
+              type="text"
+              class="form-control"
+              name="firstName"
+            />
+            <div
+              v-if="submitted && errors.has('firstName')"
+              class="alert-danger"
+            >{{errors.first('firstName')}}</div>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input
+              v-model="user.lastName"
+              v-validate="'required|min:3|max:20'"
+              type="text"
+              class="form-control"
+              name="lastName"
+            />
+            <div
+              v-if="submitted && errors.has('lastName')"
+              class="alert-danger"
+            >{{errors.first('lastName')}}</div>
+          </div>
+
           <div class="form-group">
             <label for="email">Email</label>
             <input
@@ -54,7 +85,7 @@
 
       <div
         v-if="message"
-        class="alert"
+        class="alert mt-3"
         :class="successful ? 'alert-success' : 'alert-danger'"
       >{{message}}</div>
     </div>
@@ -68,7 +99,7 @@ export default {
   name: "Register",
   data() {
     return {
-      user: new User("", "", ""),
+      user: new User("", "", "", "", ""),
       submitted: false,
       successful: false,
       message: ""

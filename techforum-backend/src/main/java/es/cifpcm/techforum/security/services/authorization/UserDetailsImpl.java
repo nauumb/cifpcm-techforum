@@ -20,11 +20,6 @@ public class UserDetailsImpl implements UserDetails {
     private String email;
     private String firstName;
     private String lastName;
-    private String gender;
-    private String location;
-    private String website;
-    private String github;
-    private String about;
     private Instant joined;
 
     @JsonIgnore
@@ -33,19 +28,13 @@ public class UserDetailsImpl implements UserDetails {
     private Collection<? extends GrantedAuthority> authorities;
 
     public UserDetailsImpl(String id, String username, String email, String password,String firstName,
-                           String lastName, String gender, String location, String website, String github,
-                           String about,Instant joined, Collection<? extends GrantedAuthority> authorities) {
+                           String lastName, Instant joined, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.gender = gender;
-        this.location = location;
-        this.website = website;
-        this.github = github;
-        this.about = about;
         this.joined = joined;
         this.authorities = authorities;
     }
@@ -62,11 +51,6 @@ public class UserDetailsImpl implements UserDetails {
                 user.getPassword(),
                 user.getFirstName(),
                 user.getLastName(),
-                user.getGender(),
-                user.getLocation(),
-                user.getWebsite(),
-                user.getGithub(),
-                user.getAbout(),
                 user.getJoined(),
                 authorities);
     }
@@ -91,26 +75,7 @@ public class UserDetailsImpl implements UserDetails {
     public String getLastName() {
         return lastName;
     }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public String getAbout() {
-        return about;
-    }
-
-    public String getGithub() {
-        return github;
-    }
+    
     public Instant getJoined() {
         return joined;
     }

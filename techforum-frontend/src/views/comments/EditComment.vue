@@ -41,7 +41,7 @@
                   <span>Save edits</span>
                 </button>
 
-                <button class="btn btn-sm btn-outline-danger ml-3">
+                <button v-on:click="discard = true" class="btn btn-sm btn-outline-danger ml-3">
                   <span>Discard draft</span>
                 </button>
               </div>
@@ -76,38 +76,44 @@ export default {
         ["link"],
         ["clean"] // remove formatting button
       ],
+      discard: false,
       message: ""
     };
   },
   methods: {
     handleEditComment() {
-      CommentService.edit(this.comment).then(
-        response => {
-          this.message = response.data;
-          console.log(this.message);
+      if (!this.discard) {
+        CommentService.edit(this.comment).then(
+          response => {
+            this.message = response.data;
 
-          if (this.parentId === null || this.parentId === undefined) {
-            this.$router.push("/comments/" + this.commentId);
-          } else {
-            this.$router.push("/comments/" + this.parentId);
+            if (this.parentId === null || this.parentId === undefined) {
+              this.$router.push("/comments/" + this.commentId);
+            } else {
+              this.$router.push("/comments/" + this.parentId);
+            }
+          },
+          error => {
+            this.message =
+              (error.response && error.response.data) ||
+              error.message ||
+              error.toString();
+            this.loading = false;
           }
-        },
-        error => {
-          this.message =
-            (error.response && error.response.data) ||
-            error.message ||
-            error.toString();
-          console.log(this.message);
-          this.loading = false;
+        );
+      } else {
+        if (this.parentId === null || this.parentId === undefined) {
+          this.$router.push("/comments/" + this.commentId);
+        } else {
+          this.$router.push("/comments/" + this.parentId);
         }
-      );
+      }
     }
   },
   mounted() {
     CommentService.get(this.commentId).then(
       response => {
         this.comment = response.data;
-        console.log(this.comment);
         document.title = "Comment | edit";
         this.dataLoaded = true;
       },
@@ -116,7 +122,6 @@ export default {
           (error.response && error.response.data) ||
           error.message ||
           error.toString();
-        console.log(this.message);
       }
     );
   }

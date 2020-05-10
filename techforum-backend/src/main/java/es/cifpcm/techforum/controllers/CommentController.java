@@ -42,7 +42,7 @@ public class CommentController {
 
     @PostMapping("/post")
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMINISTRATOR')")
-    public ResponseEntity<?> ask (@Valid @RequestBody AskRequest askRequest) {
+    public ResponseEntity<Comment> post (@Valid @RequestBody AskRequest askRequest) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
@@ -82,8 +82,7 @@ public class CommentController {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
         }
-        commentRepository.save(comment);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(commentRepository.save(comment), HttpStatus.OK);
     }
 
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMINISTRATOR')")

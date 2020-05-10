@@ -7,25 +7,23 @@
             <span id="userNameAbbreviation">{{getUserNameAbbreviation}}</span>
           </b-avatar>
         </div>
-        <div class="pt-1">
-          <span class="pr-2">Website:</span>
-          <span>{{currentUser.website}}</span>
-        </div>
-        <div class="pt-1">
-          <span class="pr-2">Github:</span>
-          <span>{{currentUser.github}}</span>
-        </div>
       </div>
       <div class="col">
-        <div class="card-deck">
           <div class="card border-secondary">
-            <h5 class="card-header bg-white text-dark">User details</h5>
             <div class="card-body">
               <div class="card-text">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
                     <span class="pr-2">Username:</span>
                     <span class>{{currentUser.username}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <span class="pr-2">First Name:</span>
+                    <span class>{{currentUser.firstName}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <span class="pr-2">Last name:</span>
+                    <span class>{{currentUser.lastName}}</span>
                   </li>
                   <li class="list-group-item">
                     <span class="pr-2">Email:</span>
@@ -46,51 +44,11 @@
               </div>
             </div>
           </div>
-
-          <div class="card border-secondary">
-            <h5 class="card-header bg-white text-dark">Personal details</h5>
-            <div class="card-body">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <span class="pr-2">First Name:</span>
-                  <span class>{{currentUser.firstName}}</span>
-                </li>
-                <li class="list-group-item">
-                  <span class="pr-2">Last name:</span>
-                  <span class>{{currentUser.lastName}}</span>
-                </li>
-                <li class="list-group-item">
-                  <span class="pr-2">Gender:</span>
-                  <span class>{{currentUser.gender}}</span>
-                </li>
-                <li class="list-group-item">
-                  <span class="pr-2">Location:</span>
-                  <span class>{{currentUser.location}}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="about-lastestpost" class="row justify-content-center">
-      <div class="col-xs-12 col-md-6">
-        <div class="card-deck">
-          <div class="card border-secondary">
-            <h5 class="card-header bg-white text-dark">About</h5>
-            <div class="card-body">
-              <div class="card-text"></div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </template>
 
-        // <div id="profile-button" class="pr-1 py-1 mr-3 my-3 bd-highlight">
-        //   <b-button size="sm">Edit profile</b-button>
-        // </div>
 
 <script>
 import moment from "moment";

@@ -22,19 +22,10 @@
     <list default="true" id="a94373cd-19c2-4eea-ae5d-2f6a7c23ae1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/comments/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/comments/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/comments/AskRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/comments/AskRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/comments/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/repository/comments/CommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/comments/CommentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/security/services/comments/CommentServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/controllers/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/cifpcm/techforum/controllers/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/models/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/models/comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/services/comment.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/services/comment.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/authorization/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/models/authorization/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/authorization/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/request/authorization/SignupRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/response/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/payload/response/JwtResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/views/comments/CommentDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/views/comments/CommentDetails.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/views/comments/EditComment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/views/comments/EditComment.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../techforum-frontend/src/views/comments/NewComment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../techforum-frontend/src/views/comments/NewComment.vue" afterDir="false" />
@@ -158,6 +149,7 @@
       <workItem from="1588779740857" duration="5774000" />
       <workItem from="1588853756199" duration="10303000" />
       <workItem from="1589041349480" duration="6428000" />
+      <workItem from="1589108963344" duration="3325000" />
     </task>
     <servers />
   </component>
@@ -194,10 +186,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="486" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587053744831" />
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1588857313181">
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1589120789110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588857313181" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589120789110" />
     <state x="779" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1585069809557">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -214,54 +206,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="761" y="342" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587055527380" />
-    <state width="1860" height="307" key="GridCell.Tab.0.bottom" timestamp="1589056316098">
+    <state width="1860" height="212" key="GridCell.Tab.0.bottom" timestamp="1589112011848">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="196" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586132710303" />
     <state width="1317" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626830" />
-    <state width="1860" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589056316098" />
-    <state width="1860" height="307" key="GridCell.Tab.0.center" timestamp="1589056316098">
+    <state width="1860" height="212" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589112011848" />
+    <state width="1860" height="212" key="GridCell.Tab.0.center" timestamp="1589112011848">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="196" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586132710302" />
     <state width="1317" height="248" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626830" />
-    <state width="1860" height="307" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589056316098" />
-    <state width="1860" height="307" key="GridCell.Tab.0.left" timestamp="1589056316098">
+    <state width="1860" height="212" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589112011848" />
+    <state width="1860" height="212" key="GridCell.Tab.0.left" timestamp="1589112011847">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="196" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586132710302" />
     <state width="1317" height="248" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626830" />
-    <state width="1860" height="307" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589056316098" />
-    <state width="1860" height="307" key="GridCell.Tab.0.right" timestamp="1589056316098">
+    <state width="1860" height="212" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589112011847" />
+    <state width="1860" height="212" key="GridCell.Tab.0.right" timestamp="1589112011848">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="196" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586132710303" />
     <state width="1317" height="248" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626830" />
-    <state width="1860" height="307" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589056316098" />
-    <state width="1860" height="307" key="GridCell.Tab.1.bottom" timestamp="1589056316098">
+    <state width="1860" height="212" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589112011848" />
+    <state width="1860" height="212" key="GridCell.Tab.1.bottom" timestamp="1589112011848">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="196" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586132710304" />
     <state width="1317" height="248" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626482" />
-    <state width="1860" height="307" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589056316098" />
-    <state width="1860" height="307" key="GridCell.Tab.1.center" timestamp="1589056316098">
+    <state width="1860" height="212" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589112011848" />
+    <state width="1860" height="212" key="GridCell.Tab.1.center" timestamp="1589112011848">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="196" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586132710303" />
     <state width="1317" height="248" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626482" />
-    <state width="1860" height="307" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589056316098" />
-    <state width="1860" height="307" key="GridCell.Tab.1.left" timestamp="1589056316098">
+    <state width="1860" height="212" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589112011848" />
+    <state width="1860" height="212" key="GridCell.Tab.1.left" timestamp="1589112011848">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="196" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586132710303" />
     <state width="1317" height="248" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626482" />
-    <state width="1860" height="307" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589056316098" />
-    <state width="1860" height="307" key="GridCell.Tab.1.right" timestamp="1589056316098">
+    <state width="1860" height="212" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589112011848" />
+    <state width="1860" height="212" key="GridCell.Tab.1.right" timestamp="1589112011848">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="196" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1360.728@0.0.1920.1040" timestamp="1586132710304" />
     <state width="1317" height="248" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1360.728@1920.0.1360.728" timestamp="1586108626482" />
-    <state width="1860" height="307" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589056316098" />
+    <state width="1860" height="212" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589112011848" />
     <state width="1860" height="307" key="GridCell.Tab.2.bottom" timestamp="1589056316098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -326,15 +318,6 @@
     <state x="656" y="118" width="607" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584811427432" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/es/cifpcm/techforum/controllers/CommentController.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="test" />

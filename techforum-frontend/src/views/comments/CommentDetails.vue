@@ -10,17 +10,13 @@
             <div id="comment-text" v-html="comment.text" class="card-text m-3"></div>
           </div>
           <div id="post-menu" v-if="this.dataLoaded === true" class="d-flex p-2 ml-4 mt-3">
-            <div v-if="currentUser.id === this.comment.author.id && this.editorVisible === false">
-              <router-link :to="{ name: 'editComment', params: { commentId: this.comment.id}}">Edit</router-link>
+            <div
+              v-if="(currentUser.id === this.comment.author.id) && (this.editorVisible === false)"
+            >
+              <router-link class="text-secondary" :to="{ name: 'editComment', params: { commentId: this.comment.id}}">Edit</router-link>
 
-              <a class="ml-2" v-on:click="handleDeleteComment">Delete</a>
+              <a class="ml-2 text-danger" v-on:click="handleDeleteComment">Delete</a>
             </div>
-
-            <a
-              v-if=" this.editorVisible === false"
-              v-on:click="editorVisible = true"
-              class="ml-2"
-            >Post your answer</a>
 
             <div
               class="user-information d-flex flex-wrap justify-content-start align-items-center rounded ml-auto m-2 p-2"
@@ -41,54 +37,66 @@
               >{{comment.author.username}}</span>
             </div>
           </div>
+          <div>
+            <button
+              v-if=" this.editorVisible === false"
+              v-on:click="editorVisible = true"
+              class="m-4 btn btn-outline-dark btn-sm"
+            >Post your answer</button>
+          </div>
         </div>
 
-        <form v-if="editorVisible" @submit.prevent="handleNewComment">
+        <form class="fade-in-top" v-if="editorVisible" @submit.prevent="handleNewAnswer">
           <vue-editor v-model="answer.text" :editorToolbar="customToolbar"></vue-editor>
 
           <div class="d-flex justify-content-end mt-2">
             <button class="btn btn-sm btn-outline-dark">
               <span>Add comment</span>
             </button>
-            <button @click.prevent="editorVisible = false" class="btn btn-sm btn-outline-danger ml-3">
+            <button
+              @click.prevent="editorVisible = false"
+              class="btn btn-sm btn-outline-danger ml-3"
+            >
               <span>Cancel</span>
             </button>
           </div>
         </form>
-        
 
-        <div class="ml-3 mt-4" v-if="this.answers.length > 0">
+        <div id="answers-content" class="ml-3 mt-4" v-if="this.answers.length > 0">
           <h5>Answers {{answers.length}}</h5>
           <div v-for="(item,index) in answers" :key="index">
             <hr />
-            <div v-html="item.text"></div>
+            <div class="card blur">
+              <div class="card-body">
+                <div class="card-text" v-html="item.text"></div>
+                <div id="post-menu" class="d-flex p-2 ml-4 mt-3">
+                  <div
+                    v-if="(currentUser.id === comment.author.id || currentUser.id === item.author.id)  && editorVisible === false"
+                  >
+                    <router-link class="text-secondary"
+                      :to="{ name: 'editAnswer', params: { commentId: item.id, parentId: comment.id}}"
+                    >Edit</router-link>
 
-            <div id="post-menu" class="d-flex p-2 ml-4 mt-3">
-              <div
-                v-if="(currentUser.id === comment.author.id || currentUser.id === item.author.id)  && editorVisible === false"
-              >
-                <router-link
-                  :to="{ name: 'editAnswer', params: { commentId: item.id, parentId: comment.id}}"
-                >Edit</router-link>
+                    <a class="ml-2 text-danger" v-on:click="handleDeleteAnswer(item.id, index)">Delete</a>
+                  </div>
 
-                <a class="ml-2" v-on:click="handleDeleteAnswer(item.id)">Delete</a>
-              </div>
-
-              <div
-                class="user-information d-flex flex-wrap justify-content-start align-items-center rounded ml-auto m-2 p-2 bg-light"
-              >
-                <span
-                  class="user-action-time text-muted pb-2 w-100"
-                >answered {{item.posted | completeDate}}</span>
-                <b-avatar variant="dark" text rounded size="2.2em">
-                  <span
-                    id="userNameAbbreviation"
-                  >{{ item.author.username | getUserNameAbbreviation}}</span>
-                </b-avatar>
-                <span
-                  id="username"
-                  class="align-self-start text-muted ml-2"
-                >{{item.author.username}}</span>
+                  <div
+                    class="user-information d-flex flex-wrap justify-content-start align-items-center rounded ml-auto m-2 p-2 bg-light"
+                  >
+                    <span
+                      class="user-action-time text-muted pb-2 w-100"
+                    >answered {{item.posted | completeDate}}</span>
+                    <b-avatar variant="dark" text rounded size="2.2em">
+                      <span
+                        id="userNameAbbreviation"
+                      >{{ item.author.username | getUserNameAbbreviation}}</span>
+                    </b-avatar>
+                    <span
+                      id="username"
+                      class="align-self-start text-muted ml-2"
+                    >{{item.author.username}}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -132,7 +140,6 @@ export default {
       CommentService.delete(this.comment.id).then(
         response => {
           this.message = response.data;
-          console.log(this.message);
           this.$router.push("/");
         },
         error => {
@@ -140,15 +147,14 @@ export default {
             (error.response && error.response.data) ||
             error.message ||
             error.toString();
-          console.log(this.message);
         }
       );
     },
-    handleDeleteAnswer: function(answer_id) {
+    handleDeleteAnswer: function(answer_id, index) {
       CommentService.delete(answer_id).then(
         response => {
           this.message = response.data;
-          console.log(this.message);
+          this.answers.splice(index, 1);
           this.$router.push("/comments/" + this.commentId);
         },
         error => {
@@ -156,25 +162,25 @@ export default {
             (error.response && error.response.data) ||
             error.message ||
             error.toString();
-          console.log(this.message);
         }
       );
     },
-    handleNewComment() {
+    handleNewAnswer() {
       this.answer.parent_id = this.comment.id;
-      this.answer.title = this.comment.title + " - answer";
+      this.answer.title = this.comment.id;
+
       CommentService.ask(this.answer).then(
         response => {
           this.message = response.data;
-          this.answers.push(this.answer);
-          console.log(this.message);
+          this.editorVisible = false;
+          this.answers.push(this.message);
+          this.answer.text = "";
         },
         error => {
           this.message =
             (error.response && error.response.data) ||
             error.message ||
             error.toString();
-          console.log(this.message);
         }
       );
     }
@@ -183,7 +189,6 @@ export default {
     CommentService.get(this.commentId).then(
       response => {
         this.comment = response.data;
-        console.log(this.comment);
         document.title = "Comment | details";
         this.dataLoaded = true;
       },
@@ -192,21 +197,17 @@ export default {
           (error.response && error.response.data) ||
           error.message ||
           error.toString();
-        console.log(this.message);
       }
     );
     CommentService.getThread(this.commentId).then(
       response => {
         this.answers = response.data;
-
-        console.log(this.answers);
       },
       error => {
         this.message =
           (error.response && error.response.data) ||
           error.message ||
           error.toString();
-        console.log(this.message);
       }
     );
   },
@@ -231,17 +232,6 @@ export default {
 };
 </script>
 <style>
-#post-menu a {
-  cursor: pointer;
-  color: #007bff !important;
-  text-decoration: none !important;
-  background-color: transparent !important;
-}
-#post-menu a:hover {
-  color: #0056b3 !important;
-  text-decoration: underline !important;
-}
-
 .user-information {
   background-color: #e1ecf4;
   max-width: 200px;
@@ -270,5 +260,30 @@ hr {
   margin-bottom: 1rem;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.blur{
+   animation: fade-in-top 0.8s;
+}
+@keyframes fade-in-top {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-top {
+  animation: fade-in-top 0.8s;
+}
+@keyframes fade-in-top {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 </style>
